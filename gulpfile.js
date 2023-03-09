@@ -1,3 +1,4 @@
+// npm -g install gulp-cli
 // npm i -D gulp gulp-cli gulp-concat gulp-htmlmin gulp-autoprefixer gulp-clean-css gulp-sass sass gulp-sourcemaps browser-sync gulp-file-include del@5.1.0
 const { src, dest, series, watch } = require('gulp');
 const concat = require('gulp-concat');
@@ -40,7 +41,7 @@ const files = () => {
 }
 
 const scssStyles = () => {
-    return src('./src/scss/styles.scss')
+    return src('./src/scss/style.scss')
         .pipe(sourcemaps.init())
         .pipe(sass()) // компилируем SASS в CSS
         .pipe(sourcemaps.write())
@@ -51,7 +52,8 @@ const scssStyles = () => {
         .pipe(cleanCSS({
             level: 2
         }))
-        .pipe(dest('dist/css'))
+        .pipe(dest('dist/src/css'))
+        .pipe(dest('src/css'))
         .pipe(browserSync.stream())
 }
 

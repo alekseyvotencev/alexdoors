@@ -1,0 +1,122 @@
+.reviews-section {
+    &__top {
+        margin-bottom: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__swiper {
+        .swiper-wrapper {
+            margin-bottom: 6rem;
+        }
+
+        &-slide {
+            width: 37rem;
+
+            &__top {
+                padding: 0 3rem 0 3.3rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                transform: translateY(50%);
+            }
+
+            &__img-container {
+                width: 12.4rem;
+                height: 12.4rem;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $lightGray;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 11.2rem;
+                    height: 11.2rem;
+                    background-color: $middleGray;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &__img {
+                width: 11.2rem;
+                height: 11.2rem;
+                object-fit: cover;
+                z-index: 2;
+
+                &.no-photo {
+                    width: 8.8rem;
+                    height: 8.2rem;
+                }
+            }
+
+            &__rating {
+                width: 6.6rem;
+                height: 6.6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $greenGradient;
+                box-shadow: $btnBoxShadow;
+                border-radius: 50%;
+
+                &-star {
+                    margin-right: 0.5rem;
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    object-fit: contain;
+                }
+
+                &-number {
+                    font-weight: 500;
+                    font-size: 1.5rem;
+                    line-height: 2.3rem;
+                    color: $white;
+                }
+            }
+
+            &__card {
+                padding: 9.9rem 3.2rem 2.9rem 3.3rem;
+                background-color: $white;
+            }
+
+            &__name {
+                margin-bottom: 1.3rem;
+            }
+
+            &__description {
+                margin-bottom: 3.7rem;
+                font-weight: 500;
+                width: 29.3rem;
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+            }
+
+            &__bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            &__link {
+                svg {
+                    width: 2.4rem;
+                    height: 1.6rem;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        &__controllers {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}

@@ -1,0 +1,245 @@
+.main-selection {
+    display: flex;
+
+    &__swiper-controllers {
+        margin-top: 5rem;
+        padding-top: 4.9rem;
+        padding-bottom: 4.9rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 9rem;
+    }
+
+    &__swiper__pagination {
+        position: relative;
+        writing-mode: vertical-rl;
+        transform: scale(-1);
+
+        .swiper-pagination-bullet {
+            display: none;
+            width: auto;
+            height: auto;
+            background-color: none;
+            border-radius: 0;
+        }
+
+        .swiper-pagination-bullet-active {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 2.2rem;
+            letter-spacing: 0.1em;
+            color: $primaryColor;
+            background-color: transparent;
+        }
+    }
+
+    &__swiper__next,
+    &__swiper__prev {
+        cursor: pointer;
+        svg {
+            width: 2.2rem;
+            height: 1.2rem;
+            object-fit: contain;
+        }
+    }
+
+    &__swiper {
+        width: 183rem;
+        height: 100rem;
+        overflow-y: visible;
+
+        .swiper-wrapper {
+            overflow-y: visible;
+        }
+
+        &-slide {
+            padding-top: 5rem;
+            overflow-y: visible;
+            &__img {
+                width: 100;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &__subheading {
+                position: absolute;
+                left: 7.3rem;
+                bottom: 16.1rem;
+            }
+
+            &__heading {
+                position: absolute;
+                left: 7.2rem;
+                bottom: 7.5rem;
+            }
+
+            &__link {
+                position: absolute;
+                top: 12.4rem;
+                right: 13.9rem;
+            }
+
+            &__btn {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 15rem;
+                height: 15rem;
+                border-radius: 50%;
+                border: 1px solid rgba(255, 255, 255, 0.8);
+
+                &:hover {
+                    & > span {
+                        border-color: #61a741;
+
+                        &::after {
+                            opacity: 1;
+                        }
+
+                        & > span > span > svg path {
+                            stroke: #61a741;
+                        }
+                    }
+                }
+
+                & > span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 10.5rem;
+                    height: 10.5rem;
+                    position: relative;
+                    background: rgba(58, 58, 58, 0.1);
+                    border: 2px solid #ffffff;
+                    box-shadow: 0.5rem 0.5rem 2rem rgba(53, 60, 70, 0.1);
+                    border-radius: inherit;
+                    transition-property: border-color;
+                    transition-duration: 0.2s;
+                    transition-timing-function: ease-in-out;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(110, 180, 69, 0.25);
+                        border-radius: inherit;
+                        opacity: 0;
+                        transition: opacity 0.2s ease-in-out;
+                    }
+
+                    & > span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 8.5rem;
+                        height: 8.5rem;
+                        border-radius: inherit;
+                        border: 1px solid rgba(255, 255, 255, 0.5);
+
+                        & > span {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 3.5rem;
+                            height: 3.5rem;
+                            background: linear-gradient(203.63deg, #ffffff 29.76%, #f2f2f2 88.11%);
+                            box-shadow: 0.5rem 0.5rem 2rem rgba(40, 63, 37, 0.3);
+                            border-radius: inherit;
+                            z-index: 2;
+
+                            svg {
+                                width: 1.1rem;
+                                height: 1.1rem;
+                                object-fit: contain;
+
+                                path {
+                                    transition: stroke 0.2s ease-in-out;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.btn1 {
+                    top: 40rem;
+                    right: 75.6rem;
+                }
+
+                &.btn2 {
+                    top: 38.9rem;
+                    right: 24.3rem;
+                }
+            }
+
+            &__card {
+                position: absolute;
+                left: 11.7rem;
+                top: 0;
+                width: 41.4rem;
+                height: 49.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $primaryColor;
+                z-index: 2;
+
+                &-img {
+                    width: 13rem;
+                    height: 28rem;
+                    object-fit: contain;
+                }
+
+                .card-top {
+                    padding: 0 2.9rem;
+                    position: absolute;
+                    width: 100%;
+                    top: 2.9rem;
+                    left: 0;
+
+                    .card-subheading {
+                        margin-bottom: 0.9rem;
+                        color: rgba(255, 255, 255, 0.4);
+                    }
+
+                    .card-heading {
+                        color: $white;
+                    }
+                }
+
+                .card-bottom {
+                    padding: 0 2rem 0 2.9rem;
+                    position: absolute;
+                    bottom: 2rem;
+                    left: 0;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    .card-price {
+                        font-weight: 700;
+                        font-size: 1.8rem;
+                        line-height: 2rem;
+                        letter-spacing: 0.05em;
+                        text-transform: uppercase;
+                        color: $white;
+                    }
+
+                    .card-link {
+                        &::before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

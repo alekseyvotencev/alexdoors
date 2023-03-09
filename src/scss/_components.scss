@@ -1,29 +1,284 @@
+$primaryColor: #21252c;
 $lightGray: #f4f5f5;
 $middleGray: #e6e7ea;
 $darkGray: #838e9c;
 $white: #ffffff;
 $greenGradient: linear-gradient(237.56deg, #78bc47 -2.7%, #4e963c 224.6%);
+$btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
+
+.section {
+    padding-top: 22rem;
+}
 
 .heading1 {
     font-family: "Gilroy";
     font-weight: 400;
     font-size: 6rem;
+    line-height: 6.6rem;
+    color: $primaryColor;
 }
 
 .heading2 {
     font-family: "Gilroy";
     font-weight: 700;
     font-size: 2.2rem;
+    line-height: 2.7rem;
+    color: $primaryColor;
 }
 
 .heading3 {
     font-family: "Gilroy";
     font-weight: 500;
     font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: $primaryColor;
 }
 
 .heading4 {
     font-family: "Gilroy";
     font-weight: 500;
     font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: $darkGray;
+}
+
+.breadcrumbs__list {
+    margin-bottom: 8rem;
+    display: flex;
+    align-items: center;
+
+    &-item {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: 2rem;
+
+            &::after {
+                content: "/";
+                position: absolute;
+                right: -1.5rem;
+                top: 0;
+                font-weight: 500;
+                font-size: 1.8rem;
+                line-height: 2.7rem;
+                color: $darkGray;
+            }
+        }
+
+        &:last-child {
+            .breadcrumbs__list-item__link {
+                color: $primaryColor;
+            }
+        }
+
+        &__link {
+            font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+            color: $darkGray;
+        }
+    }
+}
+
+.primary-btn {
+    position: relative;
+    font-family: "Gilroy";
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $primaryColor;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1.5rem;
+        width: 100%;
+        height: 0.2rem;
+        background-color: $primaryColor;
+    }
+}
+
+.secondary-btn {
+    position: relative;
+    font-family: "Gilroy";
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $primaryColor;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1.3rem;
+        width: 100%;
+        height: 0.2rem;
+        background-color: $primaryColor;
+    }
+}
+
+.card-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 7.1rem;
+    height: 7.1rem;
+    background-color: #f4f4f5;
+    cursor: pointer;
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $greenGradient;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    svg {
+        width: 2.3rem;
+        height: 1.6rem;
+        object-fit: contain;
+        z-index: 2;
+
+        path {
+            transition: fill 0.2s ease-in-out;
+        }
+    }
+
+    &:hover {
+        background-color: transparent;
+        box-shadow: $btnBoxShadow;
+
+        &::before {
+            opacity: 1;
+        }
+
+        svg {
+            path {
+                fill: $white;
+            }
+        }
+    }
+}
+
+.swiper-controllers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .pagination {
+        display: flex;
+        align-items: center;
+
+        .swiper-pagination-bullet {
+            width: auto;
+            height: auto;
+            font-weight: 700;
+            font-size: 2.2rem;
+            line-height: 2.7rem;
+            color: rgba(131, 142, 156, 0.3);
+            background-color: transparent;
+            border-radius: 0;
+            opacity: 1;
+
+            &:not(:last-child) {
+                margin-right: 1.5rem;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background: $greenGradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-shadow: 0.2rem 0.5rem 1.8rem #7ec756;
+        }
+    }
+
+    .prev,
+    .next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5.2rem;
+        height: 5.2rem;
+        cursor: pointer;
+        background: $greenGradient;
+        border-radius: 50%;
+
+        svg {
+            width: 2.4rem;
+            height: 0.8rem;
+            object-fit: contain;
+        }
+    }
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__btn {
+        padding: 2.3rem 3rem;
+        position: relative;
+        font-weight: 700;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        background-color: rgba(131, 142, 156, 0.1);
+        color: rgba(160, 161, 165, 0.8);
+        border-radius: 100rem;
+        transition-property: color, box-shadow;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            background: $greenGradient;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity .2s ease-in-out;
+        }
+
+        &.active {
+            &::before {
+                opacity: 1;
+            }
+            color: $white;
+            box-shadow: $btnBoxShadow;
+        }
+
+        &:not(:last-child) {
+            margin-right: 3rem;
+        }
+    }
+}
+
+.hero-section {
+    padding-top: 12.3rem;
 }

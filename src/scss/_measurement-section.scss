@@ -1,0 +1,68 @@
+.measurement-section {
+    padding-top: 30rem;
+
+    &__block {
+        padding: 7.1rem 8.9rem 7.6rem 8.9rem;
+        margin-left: auto;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        width: 149.5rem;
+        background-color: $middleGray;
+    }
+
+    &__heading {
+        width: 52.1rem;
+        position: absolute;
+        top: 5.5rem;
+        left: -10.7rem;
+    }
+
+    &__notice {
+        position: absolute;
+        bottom: -2.2rem;
+        left: 12rem;
+        width: 24.7rem;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        color: $darkGray;
+    }
+
+    &__img {
+        position: absolute;
+        left: 28.7rem;
+        bottom: 0;
+        width: 55.7rem;
+        height: 49rem;
+        object-fit: contain;
+    }
+
+    &__list {
+        margin-bottom: 8rem;
+        &-item {
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+
+            display: flex;
+            align-items: flex-start;
+
+            &__number {
+                margin-right: 5.4rem;
+                text-align: right;
+            }
+
+            &__description {
+                width: 39.6rem;
+                font-weight: 500;
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+            }
+        }
+    }
+
+    &__btn {
+        margin-right: 20.9rem;
+    }
+}

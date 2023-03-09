@@ -1,0 +1,93 @@
+.main-popular {
+    &__heading {
+        margin-bottom: 7rem;
+        line-height: 1;
+        text-align: center;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-areas:
+            "A  B  C"
+            "A  B  D";
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 31.5rem);
+        column-gap: 4rem;
+        row-gap: 4rem;
+
+        &__card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: $white;
+
+            .card-img {
+                object-fit: contain;
+            }
+
+            .card-top {
+                padding: 0 4rem;
+                position: absolute;
+                top: 3.4rem;
+                left: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .card-bottom {
+                padding: 0 2rem 0 4rem;
+                position: absolute;
+                bottom: 2rem;
+                left: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .card-price {
+                font-weight: 700;
+                font-size: 1.8rem;
+                line-height: 2rem;
+                letter-spacing: 0.05em;
+            }
+
+            
+        }
+
+        .card1,
+        .card2 {
+            .card-img {
+                max-width: 19.6rem;
+                max-height: 40rem;
+            }
+        }
+
+        .card3,
+        .card4 {
+            .card-img {
+                max-width: 21.1rem;
+                max-height: 21.8rem;
+            }
+        }
+
+        .card1 {
+            grid-area: A;
+        }
+
+        .card2 {
+            grid-area: B;
+        }
+
+        .card3 {
+            grid-area: C;
+        }
+
+        .card4 {
+            grid-area: D;
+        }
+    }
+}

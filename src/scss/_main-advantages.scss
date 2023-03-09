@@ -1,0 +1,85 @@
+.main-advantages {
+    &__heading {
+        margin-bottom: 8rem;
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+
+        &-item {
+            width: 37.4rem;
+            height: 34.4rem;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 1.9rem;
+                right: 3.7rem;
+                width: 28.9rem;
+                height: 28.8rem;
+                background-color: $middleGray;
+                z-index: -1;
+            }
+
+            &__heading {
+                position: absolute;
+                left: 0;
+                top: 16.4rem;
+                width: 15.7rem;
+            }
+
+            &__description {
+                position: absolute;
+                bottom: 0;
+                right: 7rem;
+                width: 12.5rem;
+            }
+
+            &__number {
+                margin: 0;
+                position: absolute;
+                right: 0;
+                bottom: 4.7rem;
+                writing-mode: vertical-rl;
+                transform: scale(-1);
+            }
+
+            &__img {
+                object-fit: contain;
+                position: absolute;
+                top: 0;
+                right: 5.7rem;
+
+                &.lamp {
+                    width: 16.3rem;
+                    height: 17.2rem;
+                }
+
+                &.drop {
+                    right: 5.8rem;
+                    width: 16.4rem;
+                    height: 16.5rem;
+                }
+
+                &.diamond {
+                    top: -1rem;
+                    right: 5rem;
+                    width: 18.8rem;
+                    height: 20rem;
+                }
+
+                &.box {
+                    top: -1rem;
+                    right: 2.6rem;
+                    width: 24.6rem;
+                    height: 20rem;
+                }
+            }
+        }
+    }
+}

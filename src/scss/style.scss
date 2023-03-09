@@ -2,6 +2,29 @@
 @import "components";
 @import "../fonts/fonts";
 
+@import "header";
+@import "footer";
+
+@import "main-hero";
+@import "main-popular";
+@import "main-category";
+@import "main-selection";
+@import "main-advantages";
+@import "main-seo";
+
+@import "reviews-section";
+
+@import "measurement-section";
+
+@import "stocks-main";
+
+@import "stock-detail";
+
+@import "about-main";
+
+@import "contacts-main";
+
+
 body.lock {
     overflow: hidden;
 }
