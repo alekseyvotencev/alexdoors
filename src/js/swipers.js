@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 'auto',
         spaceBetween: rem(3),
         loop: true,
-        effect: "fade",
+        // effect: "fade",
         pagination: {
             el: '.main-hero__swiper__pagination',
             renderBullet: function (index, className) {

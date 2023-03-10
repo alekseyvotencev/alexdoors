@@ -8,6 +8,10 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
 
 .section {
     padding-top: 22rem;
+
+    @media (max-width: 48em) {
+        padding-top: 18rem;
+    }
 }
 
 .heading1 {
@@ -16,6 +20,11 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     font-size: 6rem;
     line-height: 6.6rem;
     color: $primaryColor;
+
+    @media (max-width: 48em) {
+        font-size: 7rem;
+        line-height: 1;
+    }
 }
 
 .heading2 {
@@ -24,6 +33,11 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     font-size: 2.2rem;
     line-height: 2.7rem;
     color: $primaryColor;
+
+    @media (max-width: 48em) {
+        font-size: 3.6rem;
+        line-height: 4.4rem;
+    }
 }
 
 .heading3 {
@@ -32,6 +46,11 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     font-size: 1.8rem;
     line-height: 2.3rem;
     color: $primaryColor;
+
+    @media (max-width: 48em) {
+        // font-size: 3.6rem;
+        // line-height: 4.4rem;
+    }
 }
 
 .heading4 {
@@ -42,6 +61,11 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: $darkGray;
+
+    @media (max-width: 48em) {
+        font-size: 2.6rem;
+        line-height: 3rem;
+    }
 }
 
 .breadcrumbs__list {
@@ -100,6 +124,16 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
         width: 100%;
         height: 0.2rem;
         background-color: $primaryColor;
+    }
+
+    @media (max-width: 48em) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+
+        &::after {
+            bottom: -2.4rem;
+            height: 0.4rem;
+        }
     }
 }
 
@@ -174,6 +208,16 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
             }
         }
     }
+
+    @media (max-width: 48em) {
+        width: 12.2rem;
+        height: 12.2rem;
+
+        svg {
+            width: 4rem;
+            height: 3.2rem;
+        }
+    }
 }
 
 .swiper-controllers {
@@ -229,6 +273,50 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
             object-fit: contain;
         }
     }
+
+    @media (max-width: 48em) {
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            .swiper-pagination-bullet {
+                position: relative;
+                width: 2.2rem;
+                height: 2.2rem;
+                font-size: 0;
+                line-height: 0;
+                background-color: rgba(131, 142, 156, 0.2);
+                border-radius: 50%;
+
+                &:not(:last-child) {
+                    margin-right: 2.2rem;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: inherit;
+                    background: $greenGradient;
+                    opacity: 0;
+                }
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: transparent;
+                box-shadow: 0.4rem 1rem 3.6rem #7ec756;
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
 
 .filters {
@@ -262,7 +350,7 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
             background: $greenGradient;
             opacity: 0;
             z-index: -1;
-            transition: opacity .2s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
         }
 
         &.active {

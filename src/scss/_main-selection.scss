@@ -242,4 +242,33 @@
             }
         }
     }
+
+    @media (max-width: 48em) {
+        flex-direction: column-reverse;
+
+        &__swiper-controllers {
+            margin-top: 0;
+            padding: 3.8rem 4rem;
+            flex-direction: row-reverse;
+            width: 100%;
+        }
+
+        &__swiper__next,
+        &__swiper__prev {
+            svg {
+                width: 4.4rem;
+                height: 2.4rem;
+            }
+        }
+
+        &__swiper__pagination {
+            writing-mode: unset;
+            transform: none;
+
+            .swiper-pagination-bullet-active {
+                font-size: 3.6rem;
+                line-height: 4.4rem;
+            }
+        }
+    }
 }

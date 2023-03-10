@@ -66,6 +66,31 @@
 
     @media (max-width: 48em) {
 
+        &__logo {
+            margin-right: 0;
+
+            &-img {
+                width: 31.2rem;
+                height: 7.6rem;
+            }
+        }
+        &__search {
+            margin-right: 4rem;
+            margin-left: auto;
+
+            svg {
+                width: 4.6rem;
+                height: 4.6rem;
+            }
+        }
+
+        &__burger {
+            svg {
+                width: 5rem;
+                height: 4.2rem;
+            }
+        }
+
         &__menu {
             padding: 7rem 4rem 54rem;
             position: absolute;

@@ -13,9 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // телефон и поиск в хедере на главной - белые
 
     if (document.querySelector('.main-hero__right-info')) {
-        document.querySelectorAll('.header__search svg path').forEach(element => {
-            element.style.stroke = '#FFFFFF';
-        })
+
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.header__search svg path').forEach(element => {
+                element.style.stroke = '#FFFFFF';
+            })
+        }
+
         document.querySelector('.header__phone.desktop').style.color = '#FFFFFF';
     }
 
