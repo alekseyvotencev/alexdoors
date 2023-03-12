@@ -25,14 +25,17 @@
                     </li>
                 </ul>
                 <p class="stocks-main__heading heading1">Акции</p>
-                <div class="stocks-main__filters filters">
-                    <button class="stocks-main__filters-btn filters__btn active">
-                        действующие
-                    </button>
-                    <button class="stocks-main__filters-btn filters__btn">
-                        прошедшие
-                    </button>
+                <div class="filters-container">
+                    <div class="stocks-main__filters filters">
+                        <button class="stocks-main__filters-btn filters__btn active">
+                            действующие
+                        </button>
+                        <button class="stocks-main__filters-btn filters__btn">
+                            прошедшие
+                        </button>
+                    </div>
                 </div>
+
                 <ul class="stocks-main__list">
                     <li class="stocks-main__list-item">
                         <img src="./src/images/stocks-main__img1.png" alt="" class="stocks-main__list-item__img">
@@ -262,7 +265,7 @@
                         </div>
                     </li>
                 </ul>
-                <div class="swiper-controllers">
+                <div class="swiper-controllers stocks-main__list-controllers">
                     <div class="prev">
                         <svg width="24" height="8" viewBox="0 0 24 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
