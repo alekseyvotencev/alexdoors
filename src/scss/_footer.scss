@@ -12,13 +12,18 @@
 
         &-left {
             margin-right: 4rem;
+            display: flex;
+            flex-direction: column;
             width: 37rem;
 
             &__logo {
                 margin-bottom: 2rem;
-                width: 23.9rem;
-                height: 5.8rem;
-                object-fit: contain;
+
+                img {
+                    width: 23.9rem;
+                    height: 5.8rem;
+                    object-fit: contain;
+                }
             }
 
             &__description {
@@ -78,6 +83,7 @@
 
                 &-item {
                     &-link {
+                        display: inline-block;
                         svg {
                             width: 3.5rem;
                             height: 3.5rem;
@@ -164,6 +170,128 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 48em) {
+        margin-top: 18rem;
+        &__top {
+            .container {
+                flex-direction: column;
+            }
+
+            &-left {
+                margin-right: 0;
+                margin-bottom: 6rem;
+                width: 100%;
+
+                &__logo {
+                    img {
+                        width: 31.2rem;
+                        height: 7.6rem;
+                    }
+                }
+
+                &__description {
+                    font-size: 3rem;
+                    line-height: 4.4rem;
+                }
+            }
+
+            &-block {
+                margin-bottom: 6rem;
+                width: 100%;
+
+                &__heading {
+                    margin-bottom: 3rem;
+                }
+
+                &__list {
+                    &-item {
+                        &:not(:last-child) {
+                            margin-bottom: 2rem;
+                        }
+
+                        font-size: 3rem;
+                        line-height: 4.4rem;
+
+                        &-link {
+                            font-size: 3rem;
+                            line-height: 4.4rem;
+                        }
+                    }
+                }
+            }
+
+            &-right {
+                width: 100%;
+
+                &__list {
+                    margin-top: 7.6rem;
+                    justify-content: flex-start;
+
+                    &-item {
+                        &:not(:last-child) {
+                            margin-right: 6rem;
+                        }
+
+                        &-link {
+                            svg {
+                                width: 7rem;
+                                height: 7rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            padding-top: 7rem;
+            padding-bottom: 7rem;
+            .container {
+                align-items: center;
+                flex-direction: column;
+            }
+
+            &-left {
+                margin-right: 0;
+                margin-bottom: 3rem;
+                font-size: 3rem;
+                line-height: 5rem;
+                text-align: center;
+            }
+
+            &-center {
+                margin-bottom: 3rem;
+                font-size: 3rem;
+                line-height: 4rem;
+                text-align: center;
+            }
+            &-right {
+                margin-left: 0;
+                &__text {
+                    margin-right: 2rem;
+                    text-align: right;
+
+                    p {
+                        &:first-child {
+                            font-size: 3rem;
+                            line-height: 3.6rem;
+                        }
+
+                        &:last-child {
+                            font-size: 3.6rem;
+                            line-height: 4.4rem;
+                        }
+                    }
+                }
+
+                &__logo {
+                    width: 9.2rem;
+                    height: 9.2rem;
+                }
             }
         }
     }

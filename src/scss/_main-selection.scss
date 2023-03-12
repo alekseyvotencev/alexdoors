@@ -280,6 +280,86 @@
             &-slide {
                 padding-top: 0;
                 overflow-y: hidden;
+
+                &__subheading {
+                    bottom: auto;
+                    left: 4rem;
+                    top: 6rem;
+                }
+
+                &__heading {
+                    left: 4rem;
+                    top: 13.4rem;
+                    bottom: auto;
+                }
+
+                &__link {
+                    top: 26.4rem;
+                    left: 4rem;
+                    right: auto;
+                }
+
+                &__btn {
+                    width: 20rem;
+                    height: 20rem;
+                    border-width: 0.2rem;
+                    &.btn1 {
+                        top: 52.6rem;
+                        left: 4.6rem;
+                        right: auto;
+
+                        & > span {
+                            width: 14rem;
+                            height: 14rem;
+                            border-width: 0.4rem;
+    
+                            & > span {
+                                width: 11.4rem;
+                                height: 11.4rem;
+                                border-width: 0.2rem;
+                                & > span {
+                                    width: 4.6rem;
+                                    height: 4.6rem;
+    
+                                    svg {
+                                        width: 1.2rem;
+                                        height: 1.2rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.btn2 {
+                        top: 49.6rem;
+                        right: 5.6rem;
+                        width: 26rem;
+                        height: 26rem;
+
+                        & > span {
+                            width: 18.4rem;
+                            height: 18.4rem;
+                            border-width: 0.4rem;
+    
+                            & > span {
+                                width: 15rem;
+                                height: 15rem;
+                                border-width: 0.2rem;
+                                & > span {
+                                    width: 5.6rem;
+                                    height: 5.6rem;
+    
+                                    svg {
+                                        width: 1.6rem;
+                                        height: 1.6rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                  
+                }
             }
         }
     }

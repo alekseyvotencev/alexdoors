@@ -113,4 +113,15 @@ document.addEventListener('DOMContentLoaded', function () {
             prevEl: '.reviews-section__swiper__prev',
         },
     })
+
+    const mainAdvantagesSwiper = new Swiper('.main-advantages__swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: rem(3),
+        pagination: {
+            el: '.main-advantages__swiper__pagination',
+            renderBullet: function (index, className) {
+                return `<span class="${className}">${getTwoDigitNumber(index + 1)}</span>`;
+            }
+        },
+    })
 })

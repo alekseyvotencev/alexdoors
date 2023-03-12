@@ -801,7 +801,7 @@
                     <div class="swiper-slide main-selection__swiper-slide">
                         <img src="./src/images/main-selection__swiper-img.png" alt=""
                             class="main-selection__swiper-slide__img desktop">
-                            <img src="./src/images/main-selection__swiper-img-mobile.png" alt=""
+                        <img src="./src/images/main-selection__swiper-img-mobile.png" alt=""
                             class="main-selection__swiper-slide__img mobile">
                         <p class="main-selection__swiper-slide__subheading heading2">Входные и межкомнатные</p>
                         <p class="main-selection__swiper-slide__heading heading1">Двери точь-в-точь</p>
@@ -863,45 +863,53 @@
         <section class="main-advantages section">
             <div class="container">
                 <p class="main-advantages__heading heading1">Преимущества продукции</p>
-                <ul class="main-advantages__list">
-                    <li class="main-advantages__list-item">
-                        <p class="main-advantages__list-item__heading heading2">Экологичность
-                            продукции</p>
-                        <p class="main-advantages__list-item__description heading3">100%
-                            натуральный
-                            экошпон</p>
-                        <p class="main-advantages__list-item__number heading4">001</p>
-                        <img src="./src/images/advantages-img1.png" alt="" class="main-advantages__list-item__img lamp">
-                    </li>
-                    <li class="main-advantages__list-item">
-                        <p class="main-advantages__list-item__heading heading2">Влагостойкое
-                            покрытие</p>
-                        <p class="main-advantages__list-item__description heading3">Уникальное
-                            свойство
-                            материалов</p>
-                        <p class="main-advantages__list-item__number heading4">002</p>
-                        <img src="./src/images/advantages-img2.png" alt="" class="main-advantages__list-item__img drop">
-                    </li>
-                    <li class="main-advantages__list-item">
-                        <p class="main-advantages__list-item__heading heading2">Износостойкое
-                            покрытие</p>
-                        <p class="main-advantages__list-item__description heading3">Даже в случае
-                            интенсивной
-                            эксплуатации</p>
-                        <p class="main-advantages__list-item__number heading4">003</p>
-                        <img src="./src/images/advantages-img3.png" alt=""
-                            class="main-advantages__list-item__img diamond">
-                    </li>
-                    <li class="main-advantages__list-item">
-                        <p class="main-advantages__list-item__heading heading2">Сэндвич-
-                            коробка</p>
-                        <p class="main-advantages__list-item__description heading3">Надежное
-                            крепление
-                            петель</p>
-                        <p class="main-advantages__list-item__number heading4">004</p>
-                        <img src="./src/images/advantages-img4.png" alt="" class="main-advantages__list-item__img box">
-                    </li>
-                </ul>
+                <div class="swiper-container main-advantages__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide main-advantages__swiper-slide">
+                            <p class="main-advantages__swiper-slide__heading heading2">Экологичность
+                                продукции</p>
+                            <p class="main-advantages__swiper-slide__description heading3">100%
+                                натуральный
+                                экошпон</p>
+                            <p class="main-advantages__swiper-slide__number heading4">001</p>
+                            <img src="./src/images/advantages-img1.png" alt=""
+                                class="main-advantages__swiper-slide__img lamp">
+                        </div>
+                        <div class="swiper-slide main-advantages__swiper-slide">
+                            <p class="main-advantages__swiper-slide__heading heading2">Влагостойкое
+                                покрытие</p>
+                            <p class="main-advantages__swiper-slide__description heading3">Уникальное
+                                свойство
+                                материалов</p>
+                            <p class="main-advantages__swiper-slide__number heading4">002</p>
+                            <img src="./src/images/advantages-img2.png" alt=""
+                                class="main-advantages__swiper-slide__img drop">
+                        </div>
+                        <div class="swiper-slide main-advantages__swiper-slide">
+                            <p class="main-advantages__swiper-slide__heading heading2">Износостойкое
+                                покрытие</p>
+                            <p class="main-advantages__swiper-slide__description heading3">Даже в случае
+                                интенсивной
+                                эксплуатации</p>
+                            <p class="main-advantages__swiper-slide__number heading4">003</p>
+                            <img src="./src/images/advantages-img3.png" alt=""
+                                class="main-advantages__swiper-slide__img diamond">
+                        </div>
+                        <div class="swiper-slide main-advantages__swiper-slide">
+                            <p class="main-advantages__swiper-slide__heading heading2">Сэндвич-
+                                коробка</p>
+                            <p class="main-advantages__swiper-slide__description heading3">Надежное
+                                крепление
+                                петель</p>
+                            <p class="main-advantages__swiper-slide__number heading4">004</p>
+                            <img src="./src/images/advantages-img4.png" alt=""
+                                class="main-advantages__swiper-slide__img box">
+                        </div>
+                    </div>
+                    <div class="swiper-controllers mobile">
+                        <div class="pagination main-advantages__swiper__pagination"></div>
+                    </div>
+                </div>
             </div>
         </section>
         @@include('./templates/reviews-section.html')

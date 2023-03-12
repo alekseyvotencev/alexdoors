@@ -65,4 +65,63 @@
     &__btn {
         margin-right: 20.9rem;
     }
+
+    @media (max-width: 48em) {
+        padding-top: 28.6rem;
+
+        &__block {
+            padding: 0 4rem;
+            padding-bottom: 38.2rem;
+            margin-left: -4rem;          
+            width: 75rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__heading {
+            margin-top: -10.6rem;
+            margin-bottom: 4rem;
+            position: relative;
+            top: auto;
+            left: 0;
+            width: auto;
+        }
+
+        &__notice {
+            margin-bottom: 8rem;
+            position: relative;
+            bottom: auto;
+            left: auto;
+            width: 49.4rem;
+            font-size: 3rem;
+            line-height: 3.6rem;
+        }
+
+        &__img {
+            bottom: 0;
+            right: 0;
+            left: auto;
+            width: 54.2rem;
+            height: 47.6rem;
+        }
+
+        &__list {
+           &-item {
+            &:not(:last-child) {
+                margin-bottom: 4rem;
+            }
+
+            &__number {
+                margin-top: .8rem;
+                margin-right: 5rem;
+            }
+
+            &__description {
+                width: 57rem;
+                font-size: 3rem;
+                line-height: 4.4rem;
+            }
+           }
+        }
+    }
 }
