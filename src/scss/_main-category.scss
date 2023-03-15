@@ -44,87 +44,6 @@
                     margin-bottom: 0.9rem;
                 }
             }
-
-            .card-bottom {
-                padding: 0 2rem 0 4.9rem;
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                bottom: 2rem;
-                left: 0;
-                width: 100%;
-
-                .card-price {
-                    font-weight: 700;
-                    font-size: 1.8rem;
-                    line-height: 2rem;
-                    letter-spacing: 0.05em;
-                }
-            }
-
-            .card__color-list__container {
-                position: absolute;
-                top: 4.4rem;
-                right: 4.7rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card__color-list {
-                margin-bottom: 2.4rem;
-                display: flex;
-                flex-direction: column;
-
-                &__item {
-                    position: relative;
-
-                    &:not(:last-child) {
-                        margin-bottom: 1.4rem;
-                    }
-
-                    &.active {
-                        margin-bottom: 3.2rem;
-                        span {
-                            &::after {
-                                content: "";
-                                position: absolute;
-                                top: -100%;
-                                left: -100%;
-                                width: 4.5rem;
-                                height: 4.5rem;
-                                border-radius: 50%;
-                                border: 1px solid rgba(131, 142, 156, 0.3);
-                            }
-                        }
-                    }
-
-                    span {
-                        display: inline-block;
-                        position: relative;
-                        width: 1.5rem;
-                        height: 1.5rem;
-                        border-radius: 50%;
-
-                        &.brown {
-                            background-color: #413434;
-                        }
-
-                        &.light-gray {
-                            background-color: #d9d9d9;
-                        }
-
-                        &.dark-gray {
-                            background-color: #a2a2a2;
-                        }
-
-                        &.dark-gold {
-                            background-color: #a2865d;
-                        }
-                    }
-                }
-            }
         }
     }
 
@@ -153,51 +72,9 @@
                     }
                 }
 
-                .card__color-list__container {
-                    top: 8rem;
-                    right: 7.6rem;
-                }
-
-                .card__color-list {
-                    margin-bottom: 3.4rem;
-
-                    &__item {
-                        &:not(:last-child) {
-                            margin-bottom: 2.8rem;
-                        }
-
-                        &.active {
-                            margin-bottom: 5.8rem;
-
-                            span {
-                                &::after {
-                                    top: -3rem;
-                                    left: -3rem;
-                                    width: 8.8rem;
-                                    height: 8.8rem;
-                                }
-                            }
-                        }
-
-                        span {
-                            width: 2.8rem;
-                            height: 2.8rem;
-                        }
-                    }
-                }
-
                 &__img {
                     width: 25.6rem;
                     height: 52rem;
-                }
-
-                .card-bottom {
-                    padding: 0 3rem 0 5rem;
-                    bottom: 3rem;
-                    .card-price {
-                        font-size: 3rem;
-                        line-height: 4rem;
-                    }
                 }
             }
         }

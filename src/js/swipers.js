@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 'auto',
         spaceBetween: rem(3),
         loop: true,
-        // effect: "fade",
         pagination: {
             el: '.main-hero__swiper__pagination',
             renderBullet: function (index, className) {
@@ -84,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 'auto',
         spaceBetween: rem(3),
         loop: true,
-        // effect: 'fade',
         pagination: {
             el: '.main-selection__swiper__pagination',
             renderBullet: function (index, className) {
@@ -101,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 'auto',
         spaceBetween: rem(4),
         loop: true,
-        // effect: 'fade',
         pagination: {
             el: '.reviews-section__swiper__pagination',
             renderBullet: function (index, className) {
@@ -122,6 +119,24 @@ document.addEventListener('DOMContentLoaded', function () {
             renderBullet: function (index, className) {
                 return `<span class="${className}">${getTwoDigitNumber(index + 1)}</span>`;
             }
+        },
+    })
+
+    // КАТАЛОГ
+
+    const catalogHeroSwiper = new Swiper('.catalog-hero__swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: rem(3),
+        loop: true,
+        pagination: {
+            el: '.catalog-hero__swiper__pagination',
+            renderBullet: function (index, className) {
+                return `<span class="${className}">${getThreeDigitNumber(index + 1)}</span>`;
+            }
+        },
+        navigation: {
+            nextEl: '.catalog-hero__swiper__next',
+            prevEl: '.catalog-hero__swiper__prev',
         },
     })
 })

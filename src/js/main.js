@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.header__phone.desktop').style.color = '#FFFFFF';
     }
 
-    if (document.querySelector('.filters')) {
-        const filters = document.querySelector('.filters');
-        const filtersBtns = filters.querySelectorAll('.filters__btn')
-        filtersBtns.forEach(btn => {
+    if (document.querySelector('.categories')) {
+        const categories = document.querySelector('.categories');
+        const categoriesBtns = categories.querySelectorAll('.categories__btn')
+        categoriesBtns.forEach(btn => {
             btn.addEventListener('click', function (e) {
-                filtersBtns.forEach(el => {
+                categoriesBtns.forEach(el => {
                     el.classList.remove('active');
                 })
                 e.currentTarget.classList.add('active');
@@ -58,5 +58,78 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // чекбоксы в фильтрах, чтобы сменился фон
 
+    if (document.querySelector('.filters')) {
+        const filterSelects = document.querySelectorAll('.filters-select');
+        filterSelects.forEach(select => {
+            const filterForm = select.querySelector('.filters__form');
+            select.addEventListener('click', function () {
+                filterForm.classList.toggle('active');
+                // НАДО ЗАКРЫТЬ ВСЕ ОСТАЛЬНЫЕ
+            })
+        })
+
+        const filterLabels = document.querySelectorAll('.filters__form-label');
+        filterLabels.forEach(label => {
+            const filterInput = label.querySelector('.filters__form-label__input');
+            filterInput.addEventListener('change', function (e) {
+                if (e.target.checked) e.target.parentElement.classList.add('active');
+                else e.target.parentElement.classList.remove('active');
+            })
+        })
+    }
+
+
+    // сортировка 
+
+    if (document.querySelector('.sorting')) {
+        const sortingInput = document.querySelector('.sorting__input');
+        const sortingForm = document.querySelector('.sorting__form');
+
+        sortingInput.size = sortingInput.value.length;
+
+        sortingInput.addEventListener('input', function () {
+            sortingInput.size = sortingInput.value.length;
+        })
+
+        sortingInput.addEventListener('click', function () {
+            sortingForm.classList.toggle('active');
+        })
+
+        const sortingLabels = document.querySelectorAll('.sorting__form-label');
+
+        sortingLabels.forEach(label => {
+
+            const sortingLabelInput = label.querySelector('.sorting__form-label__input');
+
+            sortingLabelInput.addEventListener('change', function (e) {
+                sortingLabels.forEach(el => {
+                    el.classList.remove('active');
+                })
+
+                if (e.target.checked) {
+                    e.target.parentElement.classList.add('active');
+                    sortingInput.value = e.target.value.toLowerCase();
+                    sortingInput.size = sortingInput.value.length;
+                    sortingForm.classList.remove('active');
+                }
+                else e.target.parentElement.classList.remove('active');
+            })
+        })
+    }
+
+    // переворачивание фоток дверей
+
+    if (document.querySelector('.flip-btn')) {
+        const flipBtns = document.querySelectorAll('.flip-btn');
+        const flipImg = document.querySelector('.flip-img');
+        const flipText = document.querySelector('.flip-text');
+        flipBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                flipImg.classList.toggle('flip');
+                flipText.classList.toggle('flip');
+            })
+        })
+    }
 })

@@ -1,0 +1,69 @@
+.catalog {
+    &__heading {
+        margin-bottom: 7rem;
+        text-align: center;
+    }
+
+    &__categories {
+        margin-bottom: 7rem;
+    }
+
+    &__filters {
+        margin-bottom: 3rem;
+    }
+
+    &__info {
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-left {
+            font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+            color: $darkGray;
+        }
+    }
+
+    &__list {
+        margin-bottom: 6rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 50.7rem;
+            height: 65.2rem;
+            background-color: $white;
+
+            &:not(:nth-child(3n)) {
+                margin-right: 3.9rem;
+            }
+
+            &:not(:nth-last-child(-n + 3)) {
+                margin-bottom: 4rem;
+            }
+
+            &__img {
+                width: 18.4rem;
+                height: 37.5rem;
+                object-fit: contain;
+            }
+
+            &__top {
+                padding: 0 4.4rem;
+                position: absolute;
+                top: 3.7rem;
+                left: 0;
+
+                .card-subtitle {
+                    margin-bottom: 0.9rem;
+                }
+            }
+        }
+    }
+}
