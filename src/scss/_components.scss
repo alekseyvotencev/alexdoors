@@ -129,6 +129,9 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
 
 .primary-btn {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
     font-family: "Gilroy";
     font-weight: 700;
     font-size: 1.8rem;
@@ -147,6 +150,12 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
         background-color: $primaryColor;
     }
 
+    svg {
+        width: 2.2rem;
+        height: 1.2rem;
+        object-fit: contain;
+    }
+
     @media (max-width: 48em) {
         font-size: 3rem;
         line-height: 3.6rem;
@@ -154,6 +163,11 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
         &::after {
             bottom: -2.4rem;
             height: 0.4rem;
+        }
+
+        svg {
+            width: 4.4rem;
+            height: 2.4rem;
         }
     }
 }
@@ -438,16 +452,35 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
 
 .filters {
     padding: 4rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2.7rem;
     background-color: $white;
+
+    &__form {
+        width: 100%;
+
+        &-top {
+            margin-bottom: 3rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        &-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
 
     &-select {
         padding: 1.8rem 2rem;
+        flex: 1 1 auto;
         position: relative;
         border: 0.1rem solid $darkGray;
         cursor: pointer;
+
+        &:not(:last-child) {
+            margin-right: 2.7rem;
+        }
 
         &::after {
             content: "";
@@ -482,7 +515,7 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
         }
     }
 
-    &__form {
+    &__item {
         position: absolute;
         top: calc(100% + 0.1rem);
         left: 0;
@@ -532,7 +565,7 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
                     opacity: 1;
                 }
 
-                .filters__form-label__span {
+                .filters__item-label__span {
                     font-weight: 700;
                 }
             }
@@ -543,7 +576,7 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
                 -moz-appearance: none;
                 appearance: none;
 
-                &:checked + .filters__form-label__checkbox {
+                &:checked + .filters__item-label__checkbox {
                     border-color: transparent;
 
                     &::before {

@@ -7,10 +7,12 @@
 
 @import "main-hero";
 @import "main-popular";
-@import "main-category";
-@import "main-selection";
 @import "main-advantages";
 @import "main-seo";
+
+@import "door-category";
+
+@import "selection";
 
 @import "reviews-section";
 
@@ -28,6 +30,8 @@
 @import "catalog";
 
 @import "entrance";
+
+@import "interior";
 
 body.lock {
     overflow: hidden;

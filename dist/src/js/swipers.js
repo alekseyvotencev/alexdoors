@@ -59,20 +59,20 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     })
 
-    if (document.querySelector('.main-category__swiper')) {
-        document.querySelectorAll('.main-category__swiper').forEach(element => {
-            const mainHeroSwiper = new Swiper(element, {
+    if (document.querySelector('.door-category__swiper')) {
+        document.querySelectorAll('.door-category__swiper').forEach(element => {
+            const doorHeroSwiper = new Swiper(element, {
                 slidesPerView: 'auto',
                 spaceBetween: rem(4),
                 pagination: {
-                    el: element.querySelector('.main-category__swiper__pagination'),
+                    el: element.querySelector('.door-category__swiper__pagination'),
                     renderBullet: function (index, className) {
                         return `<span class="${className}">${getTwoDigitNumber(index + 1)}</span>`;
                     }
                 },
                 navigation: {
-                    nextEl: element.querySelector('.main-category__swiper__next'),
-                    prevEl: element.querySelector('.main-category__swiper__prev'),
+                    nextEl: element.querySelector('.door-category__swiper__next'),
+                    prevEl: element.querySelector('.door-category__swiper__prev'),
                 },
             })
         });

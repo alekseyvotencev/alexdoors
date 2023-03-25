@@ -1,4 +1,4 @@
-.main-selection {
+.selection {
     display: flex;
 
     &__swiper-controllers {
@@ -312,7 +312,7 @@
                             width: 14rem;
                             height: 14rem;
                             border-width: 0.4rem;
-    
+
                             & > span {
                                 width: 11.4rem;
                                 height: 11.4rem;
@@ -320,7 +320,7 @@
                                 & > span {
                                     width: 4.6rem;
                                     height: 4.6rem;
-    
+
                                     svg {
                                         width: 1.2rem;
                                         height: 1.2rem;
@@ -340,7 +340,7 @@
                             width: 18.4rem;
                             height: 18.4rem;
                             border-width: 0.4rem;
-    
+
                             & > span {
                                 width: 15rem;
                                 height: 15rem;
@@ -348,7 +348,7 @@
                                 & > span {
                                     width: 5.6rem;
                                     height: 5.6rem;
-    
+
                                     svg {
                                         width: 1.6rem;
                                         height: 1.6rem;
@@ -357,8 +357,6 @@
                             }
                         }
                     }
-
-                  
                 }
             }
         }

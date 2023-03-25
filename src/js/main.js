@@ -63,16 +63,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelector('.filters')) {
         const filterSelects = document.querySelectorAll('.filters-select');
         filterSelects.forEach(select => {
-            const filterForm = select.querySelector('.filters__form');
+            const filterForm = select.querySelector('.filters__item');
             select.addEventListener('click', function () {
                 filterForm.classList.toggle('active');
                 // НАДО ЗАКРЫТЬ ВСЕ ОСТАЛЬНЫЕ
             })
         })
 
-        const filterLabels = document.querySelectorAll('.filters__form-label');
+        const filterLabels = document.querySelectorAll('.filters__item-label');
         filterLabels.forEach(label => {
-            const filterInput = label.querySelector('.filters__form-label__input');
+            const filterInput = label.querySelector('.filters__item-label__input');
             filterInput.addEventListener('change', function (e) {
                 if (e.target.checked) e.target.parentElement.classList.add('active');
                 else e.target.parentElement.classList.remove('active');
