@@ -1,0 +1,232 @@
+.door-accessories {
+    &__top {
+        margin-bottom: 5.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__left {
+        width: 50.6rem;
+
+        &-list {
+            margin-bottom: 3.8rem;
+        }
+
+        &-item {
+            padding: 1.4rem 2.5rem 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            background-color: $white;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+
+            &.checked {
+                background-color: $middleGray;
+                
+                .door-accessories__left-item__icon {
+                    background-color: transparent;
+                    box-shadow: 0.2rem 0.5rem 1.8rem rgba(126, 199, 86, 0.4);
+
+                    &::before {
+                        opacity: 1;
+                    }
+
+                    svg {
+                        path,
+                        rect {
+                            fill: $white;
+                        }
+                    }
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+
+            &:hover {
+                background-color: $middleGray;
+            }
+
+            &__icon {
+                margin-right: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                width: 4.5rem;
+                height: 4.5rem;
+                background-color: $lightGray;
+                border-radius: 50%;
+                transition-property: background-color, box-shadow;
+                transition-duration: 0.2s;
+                transition-timing-function: ease-in-out;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: inherit;
+                    background: $greenGradient;
+                    opacity: 0;
+                    transition: opacity 0.2s ease-in-out;
+                }
+
+                svg {
+                    width: 2.3rem;
+                    height: 2.3rem;
+                    object-fit: contain;
+                    z-index: 2;
+
+                    path,
+                    rect {
+                        transition: fill 0.2s ease-in-out;
+                    }
+                }
+            }
+
+            &__text {
+                p {
+                    &:first-child {
+                        margin-bottom: 0.5rem;
+                        color: $darkGray;
+                    }
+
+                    &:last-child {
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            &__btn {
+                margin-left: auto;
+
+                svg {
+                    width: 2.2rem;
+                    height: 1.2rem;
+                }
+            }
+        }
+
+        &-size {
+            margin-bottom: 5rem;
+            padding-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid $primaryColor;
+
+            p {
+                font-weight: 700;
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+            }
+
+            button {
+                svg {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__right {
+        width: 105.4rem;
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &-item {
+            width: 50.7rem;
+            height: 65.2rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $white;
+            cursor: pointer;
+
+            &.checked {
+                .card-bottom {
+                    .card-btn {
+                        background-color: transparent;
+                        box-shadow: $btnBoxShadow;
+
+                        &::before {
+                            opacity: 1;
+                        }
+                        svg {
+                            display: none;
+
+                            &.check {
+                                display: block;
+                            }
+
+                            path {
+                                fill: $white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:not(:nth-child(2n)) {
+                margin-right: 4rem;
+            }
+
+            &:not(:nth-last-child(-n + 2)) {
+                margin-bottom: 4rem;
+            }
+
+            &__img {
+                max-width: 30rem;
+                max-height: 30rem;
+                object-fit: contain;
+            }
+
+            .card-top {
+                padding: 0 4.4rem;
+                position: absolute;
+                top: 3.7rem;
+                left: 0;
+
+                .heading4 {
+                    margin-bottom: 0.9rem;
+                }
+            }
+
+            .card-bottom {
+                .card-btn {
+                    .check {
+                        width: 2.3rem;
+                        height: 2.3rem;
+                        object-fit: contain;
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
