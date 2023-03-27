@@ -132,4 +132,46 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
     }
+
+
+
+
+
+    // ОТЗЫВЫ
+
+    // сворачивание/разворачивание отзыва
+
+    if (document.querySelector('.reviews__item')) {
+        const reviewsArr = document.querySelectorAll('.reviews__item');
+        reviewsArr.forEach(item => {
+            const reviewText = item.querySelector('.reviews__item-description');
+            const showMoreBtn = item.querySelector('.reviews__item-btn');
+            const reviewOriginalText = item.querySelector('.reviews__item-description').innerText;
+            if (reviewOriginalText.length > 209) {
+
+                reviewText.innerHTML = reviewOriginalText.substring(0, 209) + '&#8230;';
+                showMoreBtn.classList.add('active');
+
+                showMoreBtn.addEventListener('click', function (e) {
+                    switch (reviewText.innerHTML.slice(-1)) {
+
+                        case '…': {
+                            reviewText.innerHTML = reviewOriginalText;
+                            e.target.innerText = 'Свернуть';
+                            break;
+                        }
+
+                        default: {
+                            reviewText.innerHTML = reviewOriginalText.substring(0, 209) + '&#8230;';
+                            e.target.innerText = 'Читать подробнее';
+                            break;
+                        }
+                    }
+
+                })
+            }
+        })
+    }
+
+
 })

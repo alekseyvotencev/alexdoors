@@ -1,0 +1,110 @@
+.reviews {
+    &__heading {
+        margin-bottom: 3rem;
+    }
+    &__top {
+        margin-bottom: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-left {
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+            color: $darkGray;
+        }
+    }
+
+    &__content {
+        margin-bottom: 7rem;
+        display: flex;
+        justify-content: space-between;
+
+        &-left,
+        &-right {
+            width: 78rem;
+        }
+    }
+
+    &__item {
+        padding: 4.55rem 3.51rem 4rem 12.5rem;
+        width: 100%;
+        min-height: 25.4rem;
+        position: relative;
+        background-color: $white;
+
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+
+        &-img {
+            padding: 0.266rem;
+            position: absolute;
+            top: 4.55rem;
+            left: 3.5rem;
+            width: 5.5rem;
+            height: 5.5rem;
+            background-color: $lightGray;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &-rating {
+            position: absolute;
+            top: 4rem;
+            right: 3.5rem;
+            display: flex;
+            width: 6.6rem;
+            height: 6.6rem;
+            align-items: center;
+            justify-content: center;
+            background: $greenGradient;
+            box-shadow: $btnBoxShadow;
+            border-radius: 50%;
+
+            svg {
+                margin-right: 0.5rem;
+                width: 1.1rem;
+                height: 1.1rem;
+                object-fit: contain;
+            }
+
+            span {
+                font-size: 1.5rem;
+                line-height: 2.3rem;
+                color: $white;
+            }
+        }
+
+        &-name {
+            margin-bottom: 1rem;
+        }
+
+        &-date {
+            margin-bottom: 2.55rem;
+        }
+
+        &-description,
+        &-btn {
+            display: inline;
+            font-size: 1.8rem;
+            line-height: 2.2rem;
+        }
+
+        &-btn {
+            margin-left: 0.5rem;
+            display: none;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 0.3rem;
+
+            &.active {
+                display: inline;
+            }
+        }
+    }
+}

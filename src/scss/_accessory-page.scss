@@ -1,0 +1,159 @@
+.accessory-page {
+    &__top {
+        margin-bottom: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-heading {
+            width: 105.3rem;
+        }
+
+        &-right {
+            width: 50.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-stock {
+            width: 24.1rem;
+            height: 7.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $white;
+
+            p {
+                display: flex;
+                align-items: center;
+                font-weight: 700;
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+
+                span {
+                    &:first-child {
+                        margin-right: 1.2rem;
+                        width: 1.4rem;
+                        height: 1.4rem;
+                        border-radius: 50%;
+                        background: $greenGradient;
+                        box-shadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
+                    }
+                }
+            }
+        }
+
+        &-share {
+            width: 24.1rem;
+            height: 7.1rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $middleGray;
+
+            a {
+                svg {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    #icon-gradient {
+                        display: inline-block;
+                        transition: opacity 0.2s ease-in-out;
+                        opacity: 0;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        #icon-gradient {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    &__content {
+        margin-bottom: 10rem;
+        display: flex;
+        justify-content: space-between;
+
+        &-left {
+            width: 105.3rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-right {
+            width: 50.6rem;
+        }
+
+        &__photo-left,
+        &__photo-right {
+            width: 50.7rem;
+            height: 50.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: сenter;
+            background-color: $white;
+
+            img {
+                max-width: 100%;
+                max-height: 20.2rem;
+                object-fit: containF;
+            }
+        }
+
+        &-list {
+            margin-bottom: 5rem;
+
+            &__item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    line-height: 2.7rem;
+                    background-color: $lightGray;
+                    z-index: 1;
+
+                    &:last-child {
+                        color: $darkGray;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0.4rem;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: linear-gradient(to right, $darkGray 33%, rgba(255, 255, 255, 0) 0%);
+                    background-position: bottom;
+                    background-size: 0.6rem 0.2rem;
+                    background-repeat: repeat-x;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}

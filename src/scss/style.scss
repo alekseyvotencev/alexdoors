@@ -33,7 +33,13 @@
 
 @import "interior";
 
+@import "product-description";
+
 @import "door-accessories";
+
+@import "accessory-page";
+
+@import "reviews";
 
 body.lock {
     overflow: hidden;
