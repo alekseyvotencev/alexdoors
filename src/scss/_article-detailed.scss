@@ -1,0 +1,46 @@
+.article-detailed {
+    &__inner {
+        margin: 0 auto;
+        width: 132.6rem;
+    }
+
+    &__date {
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        color: $darkGray;
+    }
+
+    &__heading {
+        margin-bottom: 4rem;
+    }
+
+    &__img-container {
+        margin-bottom: 6rem;
+        padding: 3rem;
+        width: 100%;
+        background-color: $white;
+
+        img {
+            width: 100%;
+            height: 38rem;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        margin: 0 auto;
+        width: 105.4rem;
+    }
+
+    &__description {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1.8rem;
+        }
+    }
+}

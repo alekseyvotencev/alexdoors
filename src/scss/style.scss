@@ -43,6 +43,10 @@
 
 @import "articles";
 
+@import "article-detailed";
+
+@import "error";
+
 body.lock {
     overflow: hidden;
 }
