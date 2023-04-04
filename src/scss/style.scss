@@ -47,6 +47,12 @@
 
 @import "error";
 
+@import "popup";
+
+body {
+    position: relative;
+}
+
 body.lock {
     overflow: hidden;
 }

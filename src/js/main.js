@@ -174,4 +174,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    // КАРТОЧКА МЕЖКОМНАТНОЙ ДВЕРИ
+
+    if (document.querySelector('.canvas-popup')) {
+        canvasPopup = document.querySelector('.canvas-popup');
+        document.querySelectorAll('.interior__card-left__options-item').forEach(item => {
+            item.addEventListener('click', function () {
+                document.body.classList.add('lock');
+                canvasPopup.classList.add('active');
+            })
+        })
+
+        const canvasClose = canvasPopup.querySelector('.popup__close');
+        canvasClose.addEventListener('click', function () {
+            document.body.classList.remove('lock');
+            canvasPopup.classList.remove('active');
+        })
+
+        const popupSelects = canvasPopup.querySelector('.popup-select');
+        popupSelects.addEventListener('click', function () {
+            const popupFilterItem = popupSelects.querySelector('.filters__item');
+            popupFilterItem.classList.toggle('active');
+
+
+
+            if (popupFilterItem.querySelector('.filters__item-label__input').checked) {
+                popupFilterItem.querySelector('.filters__item-label__input').parentElement.classList.add('active');
+            } else popupFilterItem.querySelector('.filters__item-label__input').parentElement.classList.remove('active');
+        })
+    }
+
+
 })
