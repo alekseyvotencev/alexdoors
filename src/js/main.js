@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    const header = document.querySelector('header');
+
     // Пересчет rem в px 
     const rem = function (rem) {
         if (window.innerWidth > 768) {
@@ -176,18 +178,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // КАРТОЧКА МЕЖКОМНАТНОЙ ДВЕРИ
 
+    // выбор полотна и тд
+
     if (document.querySelector('.canvas-popup')) {
-        canvasPopup = document.querySelector('.canvas-popup');
-        document.querySelectorAll('.interior__card-left__options-item').forEach(item => {
-            item.addEventListener('click', function () {
-                document.body.classList.add('lock');
-                canvasPopup.classList.add('active');
-            })
+        const canvasPopup = document.querySelector('.canvas-popup');
+        document.querySelector('.interior__card-left__options-item.canvas').addEventListener('click', function () {
+            let scrollWidth = (window.innerWidth - document.body.clientWidth);
+            header.style.paddingRight = `${scrollWidth}px`
+            document.body.style.paddingRight = `${scrollWidth}px`;
+            document.body.classList.add('lock', 'dark');
+            canvasPopup.classList.add('active');
         })
 
         const canvasClose = canvasPopup.querySelector('.popup__close');
         canvasClose.addEventListener('click', function () {
-            document.body.classList.remove('lock');
+            header.style.paddingRight = `0`
+            document.body.style.paddingRight = `0`;
+            document.body.classList.remove('lock', 'dark');
             canvasPopup.classList.remove('active');
         })
 
@@ -196,13 +203,146 @@ document.addEventListener('DOMContentLoaded', function () {
             const popupFilterItem = popupSelects.querySelector('.filters__item');
             popupFilterItem.classList.toggle('active');
 
-
-
             if (popupFilterItem.querySelector('.filters__item-label__input').checked) {
                 popupFilterItem.querySelector('.filters__item-label__input').parentElement.classList.add('active');
             } else popupFilterItem.querySelector('.filters__item-label__input').parentElement.classList.remove('active');
         })
+
+
     }
 
+    // выбор ручек
 
+    if (document.querySelector('.options-popup')) {
+        const optionsPopup = document.querySelector('.options-popup');
+
+        document.querySelector('.interior__card-left__options-item.options').addEventListener('click', function () {
+            let scrollWidth = (window.innerWidth - document.body.clientWidth);
+            header.style.paddingRight = `${scrollWidth}px`
+            document.body.style.paddingRight = `${scrollWidth}px`;
+            document.body.classList.add('lock', 'dark');
+            optionsPopup.classList.add('active');
+        })
+
+        const optionsClose = optionsPopup.querySelector('.popup__close');
+        optionsClose.addEventListener('click', function () {
+            header.style.paddingRight = `0`
+            document.body.style.paddingRight = `0`;
+            document.body.classList.remove('lock', 'dark');
+            optionsPopup.classList.remove('active');
+        })
+
+        const optionsCards = optionsPopup.querySelectorAll('.options-popup__list-item');
+        optionsCards.forEach(element => {
+            element.addEventListener('click', function (e) {
+                optionsCards.forEach(item => item.classList.remove('active'));
+                if (e.target !== element.querySelector('.card-btn')) {
+                    element.classList.add('active');
+                }
+            })
+        });
+    }
+
+    // выбор внешней панели
+
+    if (document.querySelector('.panel-popup')) {
+        const panelPopup = document.querySelector('.panel-popup');
+
+        document.querySelector('.interior__card-left__options-item.panel').addEventListener('click', function () {
+            let scrollWidth = (window.innerWidth - document.body.clientWidth);
+            header.style.paddingRight = `${scrollWidth}px`
+            document.body.style.paddingRight = `${scrollWidth}px`;
+            document.body.classList.add('lock', 'dark');
+            panelPopup.classList.add('active');
+        })
+
+        const panelClose = panelPopup.querySelector('.popup__close');
+        panelClose.addEventListener('click', function () {
+            header.style.paddingRight = `0`
+            document.body.style.paddingRight = `0`;
+            document.body.classList.remove('lock', 'dark');
+            panelPopup.classList.remove('active');
+        })
+
+        const panelCards = panelPopup.querySelectorAll('.panel-popup__list-item');
+        panelCards.forEach(element => {
+            element.addEventListener('click', function (e) {
+                panelCards.forEach(item => item.classList.remove('active'));
+                if (e.target !== element.querySelector('.card-btn')) {
+                    element.classList.add('active');
+                }
+            })
+        });
+    }
+
+    // выбор цвета
+
+    if (document.querySelector('.color-popup')) {
+        const colorPopup = document.querySelector('.color-popup');
+
+        const chooseColorBtns = document.querySelectorAll('.interior__card-left__options-color-list-item > button');
+        chooseColorBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                let scrollWidth = (window.innerWidth - document.body.clientWidth);
+                header.style.paddingRight = `${scrollWidth}px`
+                document.body.style.paddingRight = `${scrollWidth}px`;
+                document.body.classList.add('lock', 'dark');
+                colorPopup.classList.add('active');
+            })
+        })
+
+        const colorClose = colorPopup.querySelector('.popup__close');
+        colorClose.addEventListener('click', function () {
+            header.style.paddingRight = `0`
+            document.body.style.paddingRight = `0`;
+            document.body.classList.remove('lock', 'dark');
+            colorPopup.classList.remove('active');
+        })
+
+        const colorCards = colorPopup.querySelectorAll('.color-popup__list-item');
+        colorCards.forEach(element => {
+            element.addEventListener('click', function (e) {
+                colorCards.forEach(item => item.classList.remove('active'));
+                if (e.target !== element.querySelector('.card-btn')) {
+                    element.classList.add('active');
+                }
+            })
+        });
+    }
+
+    // выбор стекла
+
+
+    if (document.querySelector('.glass-popup')) {
+        const glassPopup = document.querySelector('.glass-popup');
+
+        const chooseglassBtns = document.querySelectorAll('.interior__card-left__options-glass-list-item > button');
+        chooseglassBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                let scrollWidth = (window.innerWidth - document.body.clientWidth);
+                header.style.paddingRight = `${scrollWidth}px`
+                document.body.style.paddingRight = `${scrollWidth}px`;
+                document.body.classList.add('lock', 'dark');
+                glassPopup.classList.add('active');
+            })
+        })
+
+        const glassClose = glassPopup.querySelector('.popup__close');
+        glassClose.addEventListener('click', function () {
+            header.style.paddingRight = `0`
+            document.body.style.paddingRight = `0`;
+            document.body.classList.remove('lock', 'dark');
+            glassPopup.classList.remove('active');
+        })
+
+        const glassCards = glassPopup.querySelectorAll('.glass-popup__list-item');
+        glassCards.forEach(element => {
+            element.addEventListener('click', function (e) {
+                glassCards.forEach(item => item.classList.remove('active'));
+                if (e.target !== element.querySelector('.card-btn')) {
+                    element.classList.add('active');
+                }
+            })
+        });
+    }
 })
