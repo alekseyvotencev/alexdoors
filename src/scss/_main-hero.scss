@@ -100,6 +100,11 @@
 
             &__link {
                 letter-spacing: 0.1em;
+                transition: color .2s ease-in-out;
+
+                &:hover {
+                    color: $primaryColor;
+                }
             }
         }
     }
