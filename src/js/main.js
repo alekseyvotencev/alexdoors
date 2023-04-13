@@ -345,4 +345,48 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         });
     }
+
+
+    // МОДАЛКИ
+
+    // закрытие модалок
+
+    if (document.querySelector('.pop-up__close')) {
+        const closePopupBtns = document.querySelectorAll('.pop-up__close');
+        closePopupBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                header.style.paddingRight = `0`
+                document.body.style.paddingRight = `0`;
+                btn.parentElement.parentElement.classList.remove('active');
+                document.body.classList.remove('lock');
+            })
+        })
+    }
+
+    // модалка заявки на замер
+
+    if (document.querySelector('.popup-measuring')) {
+        const popupMeasuring = document.querySelector('.popup-measuring');
+        const measuringBtn = document.querySelector('.header__btn-measurer');
+        measuringBtn.addEventListener('click', function () {
+            let scrollWidth = (window.innerWidth - document.body.clientWidth);
+            header.style.paddingRight = `${scrollWidth}px`
+            document.body.style.paddingRight = `${scrollWidth}px`;
+            document.body.classList.add('lock');
+            popupMeasuring.classList.add('active')
+        })
+    }
+
+    // модалка успешной заявки на замер
+
+    if (document.querySelector('.popup-measuring-success')) {
+        const popupSuccessMeasuring = document.querySelector('.popup-measuring-success');
+        const successMeasuringBtn = popupSuccessMeasuring.querySelector('.pop-up__btn');
+        successMeasuringBtn.addEventListener('click', function () {
+            header.style.paddingRight = `0`
+            document.body.style.paddingRight = `0`;
+            successMeasuringBtn.parentElement.parentElement.classList.remove('active');
+            document.body.classList.remove('lock');
+        })
+    }
 })

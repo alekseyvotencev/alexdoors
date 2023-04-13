@@ -399,6 +399,7 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
         transition-property: color, box-shadow;
         transition-duration: 0.2s;
         transition-timing-function: ease-in-out;
+        z-index: 0;
 
         &::before {
             content: "";

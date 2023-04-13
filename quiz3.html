@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/fonts/fonts.css">
+    <link rel="stylesheet" href="./src/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./src/css/main.css">
+    <title>Квиз (3 из 4)</title>
+</head>
+
+<body>
+    @@include('./templates/header.html')
+    <main>
+        <section class="quiz">
+            <div class="container">
+                <p class="quiz__heading heading1">Квиз: какая наружная отделка вам нравится?</p>
+                <p class="quiz__step step3 heading2"><span>3</span>/4</p>
+                <p class="quiz__subheading">Выберите наружную отделку двери</p>
+                <ul class="quiz__list">
+                    <li class="quiz__list-item door">
+                        <img src="./src/images/entrance-card-img2.png" alt="" class="quiz__list-item__img">
+                        <div class="quiz__list-item__bottom">
+                            <p class="heading2">Название отделки</p>
+                            <a href="#" class="quiz__list-item__btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="check">
+                                    <path
+                                        d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </li>
+                    <li class="quiz__list-item door">
+                        <img src="./src/images/entrance-card-img1.png" alt="" class="quiz__list-item__img">
+                        <div class="quiz__list-item__bottom">
+                            <p class="heading2">Название отделки</p>
+                            <a href="#" class="quiz__list-item__btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="check">
+                                    <path
+                                        d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </li>
+                    <li class="quiz__list-item door">
+                        <img src="./src/images/entrance-card-img2.png" alt="" class="quiz__list-item__img">
+                        <div class="quiz__list-item__bottom">
+                            <p class="heading2">Название отделки</p>
+                            <a href="#" class="quiz__list-item__btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="check">
+                                    <path
+                                        d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </li>
+                    <li class="quiz__list-item door">
+                        <img src="./src/images/entrance-card-img1.png" alt="" class="quiz__list-item__img">
+                        <div class="quiz__list-item__bottom">
+                            <p class="heading2">Название отделки</p>
+                            <a href="#" class="quiz__list-item__btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="check">
+                                    <path
+                                        d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </li>
+                    <li class="quiz__list-item door">
+                        <img src="./src/images/entrance-card-img2.png" alt="" class="quiz__list-item__img">
+                        <div class="quiz__list-item__bottom">
+                            <p class="heading2">Название отделки</p>
+                            <a href="#" class="quiz__list-item__btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="check">
+                                    <path
+                                        d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </li>
+                    <li class="quiz__list-item door">
+                        <img src="./src/images/entrance-card-img1.png" alt="" class="quiz__list-item__img">
+                        <div class="quiz__list-item__bottom">
+                            <p class="heading2">Название отделки</p>
+                            <a href="#" class="quiz__list-item__btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="check">
+                                    <path
+                                        d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="quiz__bottom">
+                <div class="container">
+                    <a href="#" class="primary-btn">Назад</a>
+                    <a href="#" class="primary-btn">Следующий вопрос</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    @@include('./templates/header.html')
+</body>
+
+</html>
