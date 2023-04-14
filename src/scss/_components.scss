@@ -107,6 +107,7 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
 
     @media (max-width: 48em) {
         margin-bottom: 5rem;
+        flex-wrap: wrap;
 
         &-item {
             &:not(:last-child) {
@@ -115,13 +116,13 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
                 &::after {
                     right: -3rem;
                     font-size: 3rem;
-                    line-height: 5.4rem;
+                    line-height: 4.5rem;
                 }
             }
 
             &__link {
                 font-size: 3rem;
-                line-height: 5.4rem;
+                line-height: 4.5rem;
             }
         }
     }
@@ -372,7 +373,9 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
 
 .categories-container {
     @media (max-width: 48em) {
-        width: 71rem;
+        margin-left: -4rem;
+
+        width: 75rem;
         overflow-x: scroll;
         &::-webkit-scrollbar {
             width: 0;
@@ -429,8 +432,9 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     }
 
     @media (max-width: 48em) {
+        padding-left: 4rem;
         padding-right: 4rem;
-        width: fit-content;
+        width: max-content;
 
         &__btn {
             padding: 4.6rem 6rem;
@@ -614,8 +618,8 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
                 &::after {
                     content: "";
                     position: absolute;
-                    top: .3rem;
-                    left: .3rem;
+                    top: 0.3rem;
+                    left: 0.3rem;
                     width: 0.9rem;
                     height: 0.9rem;
                     background: $greenGradient;
@@ -667,8 +671,110 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
             }
         }
     }
-}
 
+    @media (max-width: 48em) {
+        padding: 4.6rem 4rem 7rem 4rem;
+
+        &__btn {
+            width: 100%;
+
+            svg {
+                width: 2.4rem;
+                height: 4.4rem;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            &.active {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        &__form {
+            margin-top: 0;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transition-property: max-height, margin-top, opacity, visibility;
+            transition-duration: 0.4s;
+            transition-timing-function: ease-in-out;
+            // transition: max-height 0.4s ease-in-out, margin-top 0.4s ease-in-out;
+
+            &.active {
+                margin-top: 9rem;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &-top {
+                margin-bottom: 4rem;
+                padding-top: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            &-bottom {
+                padding-bottom: 2.5rem;
+            }
+        }
+
+        &-select {
+            padding: 3.4rem 3.4rem 3.2rem 3.4rem;
+            flex: none;
+            width: 100%;
+            border-width: 0.2rem;
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 6rem;
+            }
+
+            &::after {
+                right: 3.4rem;
+                width: 2rem;
+                height: 2rem;
+            }
+
+            &__name {
+                padding: 0 1rem;
+                font-size: 3rem;
+                line-height: 3.6rem;
+            }
+
+            &__title {
+                font-size: 3.6rem;
+                line-height: 4.4rem;
+            }
+        }
+
+        &__item {
+            top: calc(100% + 0.2rem);
+
+            &-label {
+                padding: 2rem 2rem 2rem 8.8rem;
+
+                &__checkbox {
+                    left: 3.4rem;
+                    width: 3.4rem;
+                    height: 3.4rem;
+                    border-width: 0.2rem;
+
+                    &::after {
+                        width: 1.8rem;
+                        height: 1.6rem;
+                    }
+                }
+
+                &__span {
+                    font-size: 3rem;
+                    line-height: 3.6rem;
+                }
+            }
+        }
+    }
+}
 
 .sorting {
     display: flex;
@@ -679,7 +785,8 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     line-height: 2.7rem;
     color: $darkGray;
 
-    &__input {
+    &__btn {
+        margin-left: 0.5rem;
         color: $primaryColor;
         text-align: right;
     }
@@ -763,6 +870,9 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
                 position: absolute;
                 top: 50%;
                 left: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 1.7rem;
                 height: 1.7rem;
                 border: 1px solid #a0a1a5;
@@ -783,14 +893,11 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
 
                 &::after {
                     content: "";
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
+                    position: relative;
                     width: 0.7rem;
                     height: 0.7rem;
                     background-color: $white;
                     border-radius: inherit;
-                    transform: translate(-50%, -50%);
                     opacity: 0;
                 }
             }
@@ -803,6 +910,38 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
             }
         }
     }
+
+    @media (max-width: 48em) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+
+        &__btn {
+            margin-left: 1rem;
+            border-bottom: 2px solid $primaryColor;
+        }
+
+        &__form {
+            top: calc(100% + 3rem);
+            left: 0;
+            width: 59rem;
+
+            &-label {
+                padding: 2rem 2rem 2rem 8.8rem;
+
+                &__radio {
+                    left: 3.4rem;
+                    width: 3.4rem;
+                    height: 3.4rem;
+                    border-width: 0.2rem;
+                }
+
+                &__span {
+                    font-size: 3rem;
+                    line-height: 3.6rem;
+                }
+            }
+        }
+    }
 }
 
 .card__color-list__container {
@@ -812,6 +951,11 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 48em) {
+        top: 8rem;
+        right: 8rem;
+    }
 }
 
 .card__color-list {
@@ -903,6 +1047,18 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     }
 }
 
+.card-top {
+    .card-heading {
+        max-width: 75%;
+    }
+
+    @media (max-width: 48em) {
+        .card-heading {
+            max-width: 80%;
+        }
+    }
+}
+
 .card-bottom {
     padding: 0 2rem 0 4.9rem;
     position: absolute;
@@ -944,9 +1100,25 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     @media (max-width: 48em) {
         padding: 0 3rem 0 5rem;
         bottom: 3rem;
+
         .card-price {
             font-size: 3rem;
             line-height: 4rem;
+        }
+
+        .card-stock {
+            span {
+                &:first-child {
+                    margin-right: 2rem;
+                    width: 2rem;
+                    height: 2rem;
+                }
+
+                &:last-child {
+                    font-size: 3rem;
+                    line-height: 3rem;
+                }
+            }
         }
     }
 }

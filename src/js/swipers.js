@@ -79,19 +79,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    const mainSelectionSwiper = new Swiper('.main-selection__swiper', {
+    const mainSelectionSwiper = new Swiper('.selection__swiper', {
         slidesPerView: 'auto',
         spaceBetween: rem(3),
         loop: true,
         pagination: {
-            el: '.main-selection__swiper__pagination',
+            el: '.selection__swiper__pagination',
             renderBullet: function (index, className) {
                 return `<span class="${className}">${getThreeDigitNumber(index + 1)}</span>`;
             }
         },
         navigation: {
-            nextEl: '.main-selection__swiper__next',
-            prevEl: '.main-selection__swiper__prev',
+            nextEl: '.selection__swiper__next',
+            prevEl: '.selection__swiper__prev',
         },
     })
 

@@ -37,22 +37,32 @@
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide catalog-hero__swiper-slide">
-                        <img src="/src/images/catalog-hero-img.png" alt="" class="catalog-hero__swiper-slide__img">
+                        <img src="/src/images/catalog-hero-img.png" alt=""
+                            class="catalog-hero__swiper-slide__img desktop">
+                        <img src="/src/images/catalog-hero-img-mobile.png" alt=""
+                            class="catalog-hero__swiper-slide__img mobile">
                         <p class="catalog-hero__swiper-slide__subheading heading2">Акция</p>
                         <p class="catalog-hero__swiper-slide__heading heading1">Каждая пятая дверь в подарок!</p>
                         <p class="catalog-hero__swiper-slide__description">Не пропустите выгодное предложение - только с
                             18 по 28 февраля 2023 года при оплате товаров,
-                            приобретенных в салонах ALEXDOORS клиенты получают бесплатный монтаж для каждой пятой двери!
+                            приобретенных в&nbsp;салонах ALEXDOORS клиенты получают&nbsp;бесплатный монтаж
+                            для&nbsp;каждой&nbsp;пятой
+                            двери!
                         </p>
                         <a href="#" class="catalog-hero__swiper-slide__link primary-btn">В каталог</a>
                     </div>
                     <div class="swiper-slide catalog-hero__swiper-slide">
-                        <img src="/src/images/catalog-hero-img.png" alt="" class="catalog-hero__swiper-slide__img">
+                        <img src="/src/images/catalog-hero-img.png" alt=""
+                            class="catalog-hero__swiper-slide__img desktop">
+                        <img src="/src/images/catalog-hero-img-mobile.png" alt=""
+                            class="catalog-hero__swiper-slide__img mobile">
                         <p class="catalog-hero__swiper-slide__subheading heading2">Акция</p>
                         <p class="catalog-hero__swiper-slide__heading heading1">Каждая пятая дверь в подарок!</p>
                         <p class="catalog-hero__swiper-slide__description">Не пропустите выгодное предложение - только с
                             18 по 28 февраля 2023 года при оплате товаров,
-                            приобретенных в салонах ALEXDOORS клиенты получают бесплатный монтаж для каждой пятой двери!
+                            приобретенных в&nbsp;салонах ALEXDOORS клиенты получают&nbsp;бесплатный монтаж
+                            для&nbsp;каждой&nbsp;пятой
+                            двери!
                         </p>
                         <a href="#" class="catalog-hero__swiper-slide__link primary-btn">В каталог</a>
                     </div>
@@ -96,6 +106,14 @@
 
 
                 <div class="catalog__filters filters">
+                    <button class="primary-btn mobile catalog__filters-btn filters__btn">
+                        <span>Развернуть фильтры</span>
+                        <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.53033 21.5303C6.23744 21.8232 5.76256 21.8232 5.46967 21.5303L0.696699 16.7574C0.403806 16.4645 0.403806 15.9896 0.696699 15.6967C0.989593 15.4038 1.46447 15.4038 1.75736 15.6967L6 19.9393L10.2426 15.6967C10.5355 15.4038 11.0104 15.4038 11.3033 15.6967C11.5962 15.9896 11.5962 16.4645 11.3033 16.7574L6.53033 21.5303ZM6.75 0L6.75 21H5.25L5.25 0L6.75 0Z"
+                                fill="#21252C" />
+                        </svg>
+                    </button>
                     <form class="filters__form">
                         <div class="filters__form-top">
                             <div class="catalog__filters-item filters-select">
@@ -200,18 +218,21 @@
 
                         <div class="filters__form-bottom">
                             <button class="filters__form-reset primary-btn">Очистить</button>
-                            <button class="filters__form-apply primary-btn">Применить фильтры</button>
+                            <button class="filters__form-apply primary-btn">
+                                <span class="desktop">Применить фильтры</span>
+                                <span class="mobile">Применить</span>
+                            </button>
                         </div>
                     </form>
-
                 </div>
 
                 <div class="catalog__info">
                     <p class="catalog__info-left">Представлено: <span>1 392</span> товара</p>
                     <div class="catalog__info-right sorting">
                         <p class="sorting__heading">Сортировать по:</p>
-                        <!-- <input type="text" value="Сначала новые" readonly class="sorting__input" size="6" onkeydown="size=value.length||10" onchange="onkeydown()"> -->
-                        <input type="text" value="сначала новые" readonly class="sorting__input">
+                        <button class="sorting__btn">
+                            сначала новые
+                        </button>
                         <form class="sorting__form">
                             <label class="sorting__form-label">
                                 <input type="radio" class="sorting__form-label__input" name="SORT"

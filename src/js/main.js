@@ -80,22 +80,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 else e.target.parentElement.classList.remove('active');
             })
         })
+
+        if (window.innerWidth <= 768) {
+            const filtersBtns = document.querySelectorAll('.filters__btn');
+            filtersBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    btn.classList.toggle('active');
+                    if (btn.classList.contains('active')) {
+                        btn.querySelector('span').innerText = 'Свернуть фильтры'
+                    } else {
+                        btn.querySelector('span').innerText = 'Развернуть фильтры'
+                    }
+                    let content = btn.nextElementSibling;
+                    content.classList.toggle('active');
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null
+                    } else {
+                        content.style.maxHeight = content.scrollHeight / 5 + "rem";
+                    }
+                })
+            })
+        }
     }
 
 
     // сортировка 
 
     if (document.querySelector('.sorting')) {
-        const sortingInput = document.querySelector('.sorting__input');
+        const sortingBtn = document.querySelector('.sorting__btn');
         const sortingForm = document.querySelector('.sorting__form');
 
-        sortingInput.size = sortingInput.value.length;
-
-        sortingInput.addEventListener('input', function () {
-            sortingInput.size = sortingInput.value.length;
-        })
-
-        sortingInput.addEventListener('click', function () {
+        sortingBtn.addEventListener('click', function () {
             sortingForm.classList.toggle('active');
         })
 
@@ -112,8 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (e.target.checked) {
                     e.target.parentElement.classList.add('active');
-                    sortingInput.value = e.target.value.toLowerCase();
-                    sortingInput.size = sortingInput.value.length;
+                    sortingBtn.innerText = e.target.value.toLowerCase();
                     sortingForm.classList.remove('active');
                 }
                 else e.target.parentElement.classList.remove('active');
@@ -390,3 +404,4 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 })
+
