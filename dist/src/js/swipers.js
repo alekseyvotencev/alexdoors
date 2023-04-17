@@ -139,4 +139,25 @@ document.addEventListener('DOMContentLoaded', function () {
             prevEl: '.catalog-hero__swiper__prev',
         },
     })
+
+    // Карточка товара (аксессуары) 
+
+    const accessoryPageSwiper = new Swiper('.accessory-page__content-left .swiper-container', {
+
+        pagination: {
+            el: '.accessory-page__content-left .pagination',
+        },
+        breakpoints: {
+            769: {
+                slidesPerView: 'auto',
+                spaceBetween: rem(4),
+                allowTouchMove: false
+            },
+            320: {
+                slidesPerView: 1,
+                spaceBetween: rem(4),
+                allowTouchMove: true
+            }
+        }
+    })
 })

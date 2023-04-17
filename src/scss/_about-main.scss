@@ -50,4 +50,48 @@
             line-height: 2.7rem;
         }
     }
+
+    @media (max-width: 48em) {
+        &__container {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        &__left {
+            margin-bottom: 7rem;
+            width: 100%;
+
+            &-column {
+                width: 32rem;
+            }
+
+            &-img {
+                height: 32rem;
+
+                &:first-child {
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+
+        &__right {
+            width: 100%;
+
+            &-description {
+                font-size: 3rem;
+                line-height: 5.4rem;
+
+                &:not(:last-child) {
+                    margin-bottom: 5.4rem;
+                }
+            }
+
+            &-subheading {
+                margin-bottom: 5.4rem;
+                font-size: 3rem;
+                line-height: 5.4rem;
+
+            }
+        }
+    }
 }

@@ -99,19 +99,22 @@
             width: 50.6rem;
         }
 
-        &__photo-left,
-        &__photo-right {
-            width: 50.7rem;
-            height: 50.7rem;
-            display: flex;
-            align-items: center;
-            justify-content: сenter;
-            background-color: $white;
+        .swiper-container {
+            width: 100%;
 
-            img {
-                max-width: 100%;
-                max-height: 20.2rem;
-                object-fit: containF;
+            .swiper-slide {
+                width: 50.7rem;
+                height: 50.7rem;
+                display: flex;
+                align-items: center;
+                justify-content: сenter;
+                background-color: $white;
+
+                img {
+                    max-width: 100%;
+                    max-height: 20.2rem;
+                    object-fit: contain;
+                }
             }
         }
 
@@ -153,6 +156,86 @@
                     background-repeat: repeat-x;
                     z-index: -1;
                 }
+            }
+        }
+    }
+
+    @media (max-width: 48em) {
+        &__top {
+            margin-bottom: 3rem;
+            flex-direction: column;
+
+            &-heading {
+                margin-bottom: 4rem;
+                width: 100%;
+                font-size: 5rem;
+            }
+
+            &-right {
+                width: 100%;
+            }
+
+            &-stock,
+            &-share {
+                width: 32rem;
+                height: 12.2rem;
+            }
+
+            &-stock {
+                p {
+                    font-size: 3rem;
+                    line-height: 3.6rem;
+
+                    span {
+                        &:first-child {
+                            margin-right: 1.4rem;
+                            width: 2rem;
+                            height: 2rem;
+                        }
+                    }
+                }
+            }
+
+            &-share {
+                a {
+                    svg {
+                        width: 4.4rem;
+                        height: 4.4rem;
+                    }
+                }
+            }
+        }
+
+        &__content {
+            margin-bottom: 12.4rem;
+            flex-direction: column;
+            width: 100%;
+
+            &-left {
+                margin-bottom: 6rem;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .swiper-container {
+
+                .swiper-wrapper {
+                    margin-bottom: 8rem;
+                }
+
+                .swiper-slide {
+                    height: 67rem;
+
+                    img {
+                        max-height: 26.8rem;
+                    }
+                }
+            }
+
+            .pagination {
+                margin: 0 auto;
+                position: relative;
             }
         }
     }

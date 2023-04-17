@@ -181,14 +181,7 @@
 
                     path {
                         transition: fill 0.2s ease-in-out;
-                    }
-
-                    &.arrow {
-                        height: 1.6rem;
-                    }
-
-                    &.check {
-                        display: none;
+                        fill: #a0a1a5;
                     }
                 }
 
@@ -231,6 +224,106 @@
 
         .categories {
             justify-content: flex-start;
+        }
+    }
+
+    @media (max-width: 48em) {
+        padding-top: 23.6rem;
+        padding-bottom: 36rem;
+
+        &__heading {
+            margin-bottom: 10rem;
+        }
+
+        &__step {
+            &::before {
+                top: -4rem;
+                height: 1rem;
+            }
+
+            &::after {
+                top: -4rem;
+                height: 1rem;
+            }
+        }
+
+        &__subheading {
+            margin-bottom: 7rem;
+            font-size: 3rem;
+            line-height: 3.6rem;
+        }
+
+        &__list {
+            flex-wrap: nowrap;
+            flex-direction: column;
+
+            &-item {
+                padding: 6.8rem 5rem 5rem 5rem;
+                width: 100%;
+
+                &:not(:last-child) {
+                    margin-bottom: 4rem;
+                }
+
+                &:not(:nth-child(3n)) {
+                    margin-right: 0;
+                }
+
+                &.where {
+                    padding: 3rem 3rem 3rem 5rem;
+                }
+
+                &.parameters {
+                    min-height: 78rem;
+                }
+
+                &.door {
+                    padding: 7rem 3rem 3rem 5rem;
+                    height: 67rem;
+
+                    .quiz__list-item__bottom {
+                        p {
+                            max-width: 75%;
+                        }
+                    }
+                }
+
+                &__img {
+                    max-width: 18rem;
+                    max-height: 40rem;
+                }
+
+                &__name {
+                    margin-bottom: 1.4rem;
+                }
+
+                &__description {
+                    width: 43.8rem;
+                    font-size: 3rem;
+                    line-height: 4.4rem;
+                }
+
+                &__btn {
+                    width: 12.2rem;
+                    height: 12.2rem;
+
+                    svg {
+                        width: 4.6rem;
+                        height: 4.6rem;
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            padding-top: 6rem;
+            padding-bottom: 8.6rem;
+
+            .primary-btn {
+                &:last-child {
+                    margin-left: auto;
+                }
+            }
         }
     }
 }
