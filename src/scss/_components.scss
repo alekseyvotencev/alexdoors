@@ -715,7 +715,6 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
         &__form {
             margin-top: 0;
             max-height: 0;
-            overflow: hidden;
             opacity: 0;
             visibility: hidden;
             transition-property: max-height, margin-top, opacity, visibility;

@@ -122,11 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // сортировка 
 
     if (document.querySelector('.sorting')) {
+        const sortingContainer = document.querySelector('.sorting');
         const sortingBtn = document.querySelector('.sorting__btn');
         const sortingForm = document.querySelector('.sorting__form');
 
         sortingBtn.addEventListener('click', function () {
             sortingForm.classList.toggle('active');
+            clickOutside(sortingContainer, sortingForm);
         })
 
         const sortingLabels = document.querySelectorAll('.sorting__form-label');
