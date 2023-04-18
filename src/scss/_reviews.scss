@@ -9,6 +9,7 @@
         justify-content: space-between;
 
         &-left {
+            font-weight: 500;
             font-size: 1.8rem;
             line-height: 2.7rem;
             color: $darkGray;
@@ -104,6 +105,94 @@
 
             &.active {
                 display: inline;
+            }
+        }
+    }
+
+    @media (max-width: 48em) {
+        &__heading {
+            margin-bottom: 7rem;
+        }
+
+        &__top {
+            margin-bottom: 16rem;
+            align-items: flex-start;
+            flex-direction: column;
+
+            &-left {
+                font-size: 3rem;
+                line-height: 4rem;
+                margin-bottom: 2.4rem;
+            }
+        }
+
+        &__content {
+            margin-bottom: 8rem;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            &-left,
+            &-right {
+                width: 100%;
+            }
+
+            &-left {
+                margin-bottom: 16rem;
+            }
+        }
+
+        &__item {
+            padding: 18rem 4rem 5rem 4rem;
+            min-height: 67.8rem;
+
+            &:not(:last-child) {
+                margin-bottom: 16rem;
+            }
+
+            &-img {
+                padding: 1.2rem;
+                top: 0;
+                left: 4rem;
+                width: 24rem;
+                height: 24rem;
+                transform: translateY(-50%);
+            }
+
+            &-rating {
+                top: 0;
+                right: 4rem;
+                width: 13.2rem;
+                height: 13.2rem;
+                transform: translateY(-50%);
+
+                svg {
+                    margin-right: 1rem;
+                    width: 2.2rem;
+                    height: 2.2rem;
+                }
+
+                span {
+                    font-size: 3rem;
+                    line-height: 4.6rem;
+                }
+            }
+
+            &-name {
+                margin-bottom: 2rem;
+            }
+
+            &-date {
+                margin-bottom: 4rem;
+            }
+
+            &-description {
+                font-size: 3rem;
+                line-height: 4.4rem;
+            }
+
+            &-btn {
+                font-size: 3rem;
+                line-height: 4.4rem;
             }
         }
     }

@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     sortingBtn.innerText = e.target.value.toLowerCase();
                     sortingForm.classList.remove('active');
                 }
+
                 else e.target.parentElement.classList.remove('active');
             })
         })
@@ -150,9 +151,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-
-
-
     // ОТЗЫВЫ
 
     // сворачивание/разворачивание отзыва
@@ -163,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const reviewText = item.querySelector('.reviews__item-description');
             const showMoreBtn = item.querySelector('.reviews__item-btn');
             const reviewOriginalText = item.querySelector('.reviews__item-description').innerText;
+
             if (reviewOriginalText.length > 209) {
 
                 reviewText.innerHTML = reviewOriginalText.substring(0, 209) + '&#8230;';

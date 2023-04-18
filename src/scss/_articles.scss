@@ -21,7 +21,7 @@
             margin-right: 3.9rem;
         }
 
-        &:not(:nth-last-child(-n+3)) {
+        &:not(:nth-last-child(-n + 3)) {
             margin-bottom: 4rem;
         }
 
@@ -55,6 +55,52 @@
                 width: 2.4rem;
                 height: 1.6rem;
                 object-fit: contain;
+            }
+        }
+    }
+
+    @media (max-width: 48em) {
+        &__heading {
+            margin-bottom: 7rem;
+        }
+
+        &__content {
+            margin-bottom: 8rem;
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+
+        &__item {
+            padding: 4rem 5rem;
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 4rem;
+            }
+            &:not(:nth-child(3n)) {
+                margin-right: 0;
+            }
+
+            &-img {
+                margin-bottom: 5rem;
+                height: 30rem;
+            }
+
+            &-title {
+                margin-bottom: 2rem;
+            }
+
+            &-description {
+                margin-bottom: 4rem;
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+
+            &-link {
+                svg {
+                    width: 4.8rem;
+                    height: 3.2rem;
+                }
             }
         }
     }
