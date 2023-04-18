@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // функция клика вне элемента
+    function clickOutside(elem, needToClose) {
+        document.addEventListener('click', function (e) {
+            if (e.target !== elem && !elem.contains(e.target)) {
+                needToClose.classList.remove('active');
+            }
+        })
+    }
+
     // телефон и поиск в хедере на главной - белые
 
     if (document.querySelector('.main-hero__right-info')) {
@@ -66,9 +75,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const filterSelects = document.querySelectorAll('.filters-select');
         filterSelects.forEach(select => {
             const filterForm = select.querySelector('.filters__item');
-            select.addEventListener('click', function () {
+            select.addEventListener('click', function (e) {
+
+                filterSelects.forEach(item => {
+                    if (item !== select) {
+                        item.querySelector('.filters__item').classList.remove('active');
+                    }
+                })
                 filterForm.classList.toggle('active');
-                // НАДО ЗАКРЫТЬ ВСЕ ОСТАЛЬНЫЕ
+                clickOutside(select, filterForm);
             })
         })
 

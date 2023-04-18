@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/fonts/fonts.css">
+    <link rel="stylesheet" href="./src/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./src/css/main.css">
+    <title>Где купить</title>
+</head>
+
+<body>
+    @@include('./templates/header.html')
+    <main>
+        <section class="offices hero-section">
+            <div class="container">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__list-item">
+                        <a href="#" class="breadcrumbs__list-item__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__list-item">
+                        <a href="#" class="breadcrumbs__list-item__link">Где купить</a>
+                    </li>
+                </ul>
+                <p class="offices__heading heading1">Где купить</p>
+                <div class="offices__content">
+                    <div class="offices__content-left">
+                        <p class="offices__content-left__heading heading2">Поиск магазина</p>
+                        <form class="filters__form">
+                            <div class="filters__form-top">
+                                <div class="catalog__filters-item filters-select">
+                                    <p class="filters-select__name">Регион</p>
+                                    <p class="filters-select__title">Все</p>
+                                    <div class="filters__item">
+                                        <label class="filters__item-label">
+                                            <input type="checkbox" class="filters__item-label__input">
+                                            <span class="filters__item-label__checkbox"></span>
+                                            <span class="filters__item-label__span">сборно-разборная</span>
+                                        </label>
+                                        <label class="filters__item-label">
+                                            <input type="checkbox" class="filters__item-label__input">
+                                            <span class="filters__item-label__checkbox"></span>
+                                            <span class="filters__item-label__span">каркасно-щитовая</span>
+                                        </label>
+                                        <label class="filters__item-label">
+                                            <input type="checkbox" class="filters__item-label__input">
+                                            <span class="filters__item-label__checkbox"></span>
+                                            <span class="filters__item-label__span">скрытого монтажа</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="catalog__filters-item filters-select">
+                                    <p class="filters-select__name">Город</p>
+                                    <p class="filters-select__title">Все</p>
+                                    <div class="filters__item">
+                                        <label class="filters__item-label">
+                                            <input type="checkbox" class="filters__item-label__input">
+                                            <span class="filters__item-label__checkbox"></span>
+                                            <span class="filters__item-label__span">однотонная</span>
+                                        </label>
+                                        <label class="filters__item-label">
+                                            <input type="checkbox" class="filters__item-label__input">
+                                            <span class="filters__item-label__checkbox"></span>
+                                            <span class="filters__item-label__span">под дерево</span>
+                                        </label>
+                                        <label class="filters__item-label">
+                                            <input type="checkbox" class="filters__item-label__input">
+                                            <span class="filters__item-label__checkbox"></span>
+                                            <span class="filters__item-label__span">под покраску</span>
+                                        </label>
+                                        <label class="filters__item-label">
+                                            <input type="checkbox" class="filters__item-label__input">
+                                            <span class="filters__item-label__checkbox"></span>
+                                            <span class="filters__item-label__span">светлая</span>
+                                        </label>
+                                        <label class="filters__item-label">
+                                            <input type="checkbox" class="filters__item-label__input">
+                                            <span class="filters__item-label__checkbox"></span>
+                                            <span class="filters__item-label__span">лофт</span>
+                                        </label>
+                                        <label class="filters__item-label">
+                                            <input type="checkbox" class="filters__item-label__input">
+                                            <span class="filters__item-label__checkbox"></span>
+                                            <span class="filters__item-label__span">глянец</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="offices"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @@include('./templates/footer.html')
+</body>
+
+</html>
