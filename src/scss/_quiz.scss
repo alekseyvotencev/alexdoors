@@ -216,6 +216,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            .primary-btn {
+                &:last-child {
+                    margin-left: auto;
+                }
+            }
         }
     }
 
