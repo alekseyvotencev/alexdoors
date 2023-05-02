@@ -1,0 +1,10 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="linearColors" x1="0" y1="0" x2="0" y2="0">
+        <stop stop-color="#78BC47"></stop>
+        <stop offset="1" stop-color="#4E963C"></stop>
+    </linearGradient>
+    <circle cx="80" cy="80" r="78" fill="#6EB44540" stroke="url(#linearColors)" stroke-width="2"/>
+    <circle cx="80" cy="80" r="63" fill="none" stroke="#FFFFFF80" stroke-width="1"/>
+    <circle cx="80" cy="80" r="30" fill="#FFFFFF"/>
+</svg>
+

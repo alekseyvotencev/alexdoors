@@ -43,6 +43,8 @@
 
 @import "articles";
 
+@import "offices";
+
 @import "article-detailed";
 
 @import "error";
@@ -68,6 +70,7 @@ body {
         transition-property: opacity, visibility;
         transition-duration: 0.2s;
         transition-timing-function: ease-in-out;
+        z-index: 2;
     }
 }
 
@@ -127,7 +130,7 @@ input[type="email"] {
         padding-bottom: 2.4rem;
         font-size: 3rem;
         line-height: 3.6rem;
-        border-width: .4rem;
+        border-width: 0.4rem;
     }
 }
 

@@ -34,6 +34,25 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.header__phone.desktop').style.color = '#FFFFFF';
     }
 
+    // кнопка в секции Точь в точь на мобилке
+
+    if (document.querySelector('.selection') && window.innerWidth <= 768) {
+        let selectionBtns = document.querySelectorAll('.selection__swiper-slide__btn.btn2');
+        selectionBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                let cardPopup = btn.parentElement.querySelector('.selection__swiper-slide__card');
+                btn.parentElement.classList.add('dark');
+                cardPopup.classList.add('active');
+                let cardPopupClose = cardPopup.querySelector('.selection__swiper-slide__card-close');
+                cardPopupClose.addEventListener('click', function () {
+                    cardPopup.classList.remove('active');
+                    btn.parentElement.classList.remove('dark');
+                })
+            })
+        })
+
+    }
+
     if (document.querySelector('.categories')) {
         const categories = document.querySelector('.categories');
         const categoriesBtns = categories.querySelectorAll('.categories__btn')
@@ -47,31 +66,166 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // карта на странице Контакты
     if (document.querySelector('#map')) {
-        ymaps.ready(init);
-        function init() {
-            const myMap = new ymaps.Map("map", {
-                center: [56.832639, 60.627433],
-                zoom: 14
-            });
+        if (window.innerWidth > 768) {
+            ymaps.ready(init);
+            function init() {
+                const myMap = new ymaps.Map("map", {
+                    center: [56.832639, 60.627433],
+                    zoom: 14
+                });
 
-            const placemark = new ymaps.Placemark([56.827444, 60.655299], {},
-                {
-                    iconLayout: 'default#image',
-                    iconImageHref: '/src/images/svg/placemark.svg',
-                    iconImageSize: [rem(6.5), rem(6.5)],
-                    iconImageOffset: [rem(0), rem(-6.5)]
-                })
+                const placemark = new ymaps.Placemark([56.827444, 60.655299], {},
+                    {
+                        iconLayout: 'default#image',
+                        iconImageHref: '/src/images/svg/placemark.svg',
+                        iconImageSize: [rem(6.5), rem(6.5)],
+                        iconImageOffset: [rem(0), rem(-6.5)]
+                    })
 
-            myMap.geoObjects.add(placemark);
-            myMap.behaviors.disable('scrollZoom');
+                myMap.geoObjects.add(placemark);
+                myMap.behaviors.disable('scrollZoom');
+            }
+        } else {
+            ymaps.ready(init);
+            function init() {
+                const myMap = new ymaps.Map("map", {
+                    center: [56.832639, 60.627433],
+                    zoom: 14
+                });
 
+                const placemark = new ymaps.Placemark([56.827444, 60.655299], {},
+                    {
+                        iconLayout: 'default#image',
+                        iconImageHref: '/src/images/svg/placemark.svg',
+                        iconImageSize: [rem(3), rem(3)],
+                        iconImageOffset: [rem(0), rem(-3)]
+                    })
+
+                myMap.geoObjects.add(placemark);
+                myMap.behaviors.disable('scrollZoom');
+
+            }
         }
+
+    }
+
+    // карта на странице Где купить
+    if (document.querySelector('#offices')) {
+
+        if (window.innerWidth > 768) {
+            ymaps.ready(function () {
+                var myMap = new ymaps.Map('offices', {
+                    center: [55.430758, 37.546489],
+                    zoom: 4,
+                    behaviors: ['default', 'scrollZoom']
+                });
+                clusterer = new ymaps.Clusterer({
+                    preset: 'islands#invertedVioletClusterIcons',
+                    groupByCoordinates: false,
+                    clusterDisableClickZoom: false,
+                    clusterIcons: [{
+                        href: './src/images/svg/mapClusterer.svg',
+                        size: [rem(16), rem(16)],
+                        offset: [-rem(8), -rem(8)]
+                    }],
+                });
+
+                points = [
+                    [55.879758, 38.478688],
+                    [55.059564, 38.859781],
+                    [55.103065, 38.768817],
+                    [55.671209, 37.274784],
+                    [55.657281, 37.177793],
+                    [55.854436, 37.496138],
+                    [55.624378, 37.714321],
+                    [54.897976, 38.070431],
+                    [55.452640, 38.438686],
+                    [54.873699, 37.221954],
+                    [55.616015, 37.484406],
+                    [54.203525, 37.590237],
+                    [55.163168, 37.467985],
+                    [55.411900, 37.581244]
+                ];
+                getPointOptions = function () {
+                    return {
+                        iconLayout: 'default#image',
+                        iconImageHref: '/src/images/svg/placemark.svg',
+                        iconImageSize: [rem(6.5), rem(6.5)],
+                        iconImageOffset: [rem(0), rem(-6.5)]
+                    };
+                };
+                geoObjects = [];
+                for (var i = 0, len = points.length; i < len; i++) {
+                    geoObjects[i] = new ymaps.Placemark(points[i], {}, getPointOptions());
+                }
+
+                clusterer.add(geoObjects);
+                myMap.geoObjects.add(clusterer);
+
+
+            });
+        } else {
+            ymaps.ready(function () {
+                var myMap = new ymaps.Map('offices', {
+                    center: [55.430758, 37.546489],
+                    zoom: 3,
+                    behaviors: ['default', 'scrollZoom']
+                });
+                clusterer = new ymaps.Clusterer({
+                    preset: 'islands#invertedVioletClusterIcons',
+                    groupByCoordinates: false,
+                    clusterDisableClickZoom: false,
+                    clusterIcons: [{
+                        href: './src/images/svg/mapClusterer.svg',
+                        size: [rem(9), rem(9)],
+                        offset: [-rem(4.5), -rem(4.5)]
+                    }],
+                });
+
+                points = [
+                    [55.879758, 38.478688],
+                    [55.059564, 38.859781],
+                    [55.103065, 38.768817],
+                    [55.671209, 37.274784],
+                    [55.657281, 37.177793],
+                    [55.854436, 37.496138],
+                    [55.624378, 37.714321],
+                    [54.897976, 38.070431],
+                    [55.452640, 38.438686],
+                    [54.873699, 37.221954],
+                    [55.616015, 37.484406],
+                    [54.203525, 37.590237],
+                    [55.163168, 37.467985],
+                    [55.411900, 37.581244]
+                ];
+                getPointOptions = function () {
+                    return {
+                        iconLayout: 'default#image',
+                        iconImageHref: '/src/images/svg/placemark.svg',
+                        iconImageSize: [rem(3), rem(3)],
+                        iconImageOffset: [rem(0), rem(-3)]
+                    };
+                };
+                geoObjects = [];
+                for (var i = 0, len = points.length; i < len; i++) {
+                    geoObjects[i] = new ymaps.Placemark(points[i], {}, getPointOptions());
+                }
+
+                clusterer.add(geoObjects);
+                myMap.geoObjects.add(clusterer);
+
+
+            });
+        }
+
+
     }
 
     // чекбоксы в фильтрах, чтобы сменился фон
 
-    if (document.querySelector('.filters')) {
+    if (document.querySelector('.filters-select')) {
         const filterSelects = document.querySelectorAll('.filters-select');
         filterSelects.forEach(select => {
             const filterForm = select.querySelector('.filters__item');
