@@ -62,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     el.classList.remove('active');
                 })
                 e.currentTarget.classList.add('active');
+                const path = e.currentTarget.dataset.path;
+                document.querySelectorAll(`[data-target]`).forEach(el => el.classList.remove('active'));
+                document.querySelectorAll(`[data-target=${path}]`).forEach(el => el.classList.add('active'));
             })
         })
     }
@@ -249,29 +252,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 else e.target.parentElement.classList.remove('active');
             })
         })
-
-        if (window.innerWidth <= 768) {
-            const filtersBtns = document.querySelectorAll('.filters__btn');
-            filtersBtns.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    btn.classList.toggle('active');
-                    if (btn.classList.contains('active')) {
-                        btn.querySelector('span').innerText = 'Свернуть фильтры'
-                    } else {
-                        btn.querySelector('span').innerText = 'Развернуть фильтры'
-                    }
-                    let content = btn.nextElementSibling;
-                    content.classList.toggle('active');
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null
-                    } else {
-                        content.style.maxHeight = content.scrollHeight / 5 + "rem";
-                    }
-                })
-            })
-        }
     }
 
+    // кнопка Развернуть фмльтры в мобилке
+    if (document.querySelector('.filters__btn') && window.innerWidth <= 768) {
+        const filtersBtns = document.querySelectorAll('.filters__btn');
+        filtersBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                btn.classList.toggle('active');
+                if (btn.classList.contains('active')) {
+                    btn.querySelector('span').innerText = 'Свернуть фильтры'
+                } else {
+                    btn.querySelector('span').innerText = 'Развернуть фильтры'
+                }
+                let content = btn.nextElementSibling;
+                content.classList.toggle('open');
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null
+                } else {
+                    content.style.maxHeight = content.scrollHeight / 5 + "rem";
+                }
+            })
+        })
+    }
 
     // сортировка 
 

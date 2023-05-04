@@ -37,9 +37,9 @@
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide catalog-hero__swiper-slide">
-                        <img src="/src/images/catalog-hero-img.png" alt=""
+                        <img src="./src/images/catalog-hero-img.png" alt=""
                             class="catalog-hero__swiper-slide__img desktop">
-                        <img src="/src/images/catalog-hero-img-mobile.png" alt=""
+                        <img src="./src/images/catalog-hero-img-mobile.png" alt=""
                             class="catalog-hero__swiper-slide__img mobile">
                         <p class="catalog-hero__swiper-slide__subheading heading2">Акция</p>
                         <p class="catalog-hero__swiper-slide__heading heading1">Каждая пятая дверь в подарок!</p>
@@ -52,9 +52,9 @@
                         <a href="#" class="catalog-hero__swiper-slide__link primary-btn">В каталог</a>
                     </div>
                     <div class="swiper-slide catalog-hero__swiper-slide">
-                        <img src="/src/images/catalog-hero-img.png" alt=""
+                        <img src="./src/images/catalog-hero-img.png" alt=""
                             class="catalog-hero__swiper-slide__img desktop">
-                        <img src="/src/images/catalog-hero-img-mobile.png" alt=""
+                        <img src="./src/images/catalog-hero-img-mobile.png" alt=""
                             class="catalog-hero__swiper-slide__img mobile">
                         <p class="catalog-hero__swiper-slide__subheading heading2">Акция</p>
                         <p class="catalog-hero__swiper-slide__heading heading1">Каждая пятая дверь в подарок!</p>
@@ -89,23 +89,23 @@
                 <p class="catalog__heading heading1">Каталог продукции</p>
                 <div class="categories-container">
                     <div class="catalog__categories categories">
-                        <button class="catalog__categories-btn categories__btn active">
+                        <button class="catalog__categories-btn categories__btn active" data-path="interior">
                             Межкомнтаные
                         </button>
-                        <button class="catalog__categories-btn categories__btn">
+                        <button class="catalog__categories-btn categories__btn" data-path="entrance">
                             Входные
                         </button>
-                        <button class="catalog__categories-btn categories__btn">
+                        <button class="catalog__categories-btn categories__btn" data-path="systems">
                             Системы открывания
                         </button>
-                        <button class="catalog__categories-btn categories__btn">
+                        <button class="catalog__categories-btn categories__btn" data-path="accessories">
                             Аксессуары
                         </button>
                     </div>
                 </div>
 
 
-                <div class="catalog__filters filters">
+                <div class="catalog__filters filters active" data-target="interior">
                     <button class="primary-btn mobile catalog__filters-btn filters__btn">
                         <span>Развернуть фильтры</span>
                         <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -226,7 +226,171 @@
                     </form>
                 </div>
 
-                <div class="catalog__info">
+                <div class="catalog__filters filters" data-target="entrance">
+                    <button class="primary-btn mobile catalog__filters-btn filters__btn">
+                        <span>Развернуть фильтры</span>
+                        <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.53033 21.5303C6.23744 21.8232 5.76256 21.8232 5.46967 21.5303L0.696699 16.7574C0.403806 16.4645 0.403806 15.9896 0.696699 15.6967C0.989593 15.4038 1.46447 15.4038 1.75736 15.6967L6 19.9393L10.2426 15.6967C10.5355 15.4038 11.0104 15.4038 11.3033 15.6967C11.5962 15.9896 11.5962 16.4645 11.3033 16.7574L6.53033 21.5303ZM6.75 0L6.75 21H5.25L5.25 0L6.75 0Z"
+                                fill="#21252C" />
+                        </svg>
+                    </button>
+                    <form class="filters__form">
+                        <div class="filters__form-top">
+                            <div class="catalog__filters-item filters-select">
+                                <p class="filters-select__name">Применение</p>
+                                <p class="filters-select__title">Все</p>
+                                <div class="filters__item">
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">сборно-разборная</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">каркасно-щитовая</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">скрытого монтажа</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="catalog__filters-item filters-select">
+                                <p class="filters-select__name">Отделка снаружи</p>
+                                <p class="filters-select__title">Все</p>
+                                <div class="filters__item">
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">классика</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">модерн</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">неоклассика</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="catalog__filters-item filters-select">
+                                <p class="filters-select__name">Отделка внутри</p>
+                                <p class="filters-select__title">Все</p>
+                                <div class="filters__item">
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">глухая</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">остекленная</span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="catalog__filters-item filters-select">
+                                <p class="filters-select__name">Замки</p>
+                                <p class="filters-select__title">Все</p>
+                                <div class="filters__item">
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">однотонная</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">под дерево</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">под покраску</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">светлая</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">лофт</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">глянец</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filters__form-bottom">
+                            <button class="filters__form-reset primary-btn">Очистить</button>
+                            <button class="filters__form-apply primary-btn">
+                                <span class="desktop">Применить фильтры</span>
+                                <span class="mobile">Применить</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="catalog__filters filters" data-target="accessories">
+                    <button class="primary-btn mobile catalog__filters-btn filters__btn">
+                        <span>Развернуть фильтры</span>
+                        <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.53033 21.5303C6.23744 21.8232 5.76256 21.8232 5.46967 21.5303L0.696699 16.7574C0.403806 16.4645 0.403806 15.9896 0.696699 15.6967C0.989593 15.4038 1.46447 15.4038 1.75736 15.6967L6 19.9393L10.2426 15.6967C10.5355 15.4038 11.0104 15.4038 11.3033 15.6967C11.5962 15.9896 11.5962 16.4645 11.3033 16.7574L6.53033 21.5303ZM6.75 0L6.75 21H5.25L5.25 0L6.75 0Z"
+                                fill="#21252C" />
+                        </svg>
+                    </button>
+                    <form class="filters__form">
+                        <div class="filters__form-top">
+                            <div class="catalog__filters-item filters-select">
+                                <p class="filters-select__name">Тип двери</p>
+                                <p class="filters-select__title">Все</p>
+                                <div class="filters__item">
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">сборно-разборная</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">каркасно-щитовая</span>
+                                    </label>
+                                    <label class="filters__item-label">
+                                        <input type="checkbox" class="filters__item-label__input">
+                                        <span class="filters__item-label__checkbox"></span>
+                                        <span class="filters__item-label__span">скрытого монтажа</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filters__form-bottom">
+                            <button class="filters__form-reset primary-btn">Очистить</button>
+                            <button class="filters__form-apply primary-btn">
+                                <span class="desktop">Применить фильтры</span>
+                                <span class="mobile">Применить</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="catalog__info active" data-target="interior">
                     <p class="catalog__info-left">Представлено: <span>1 392</span> товара</p>
                     <div class="catalog__info-right sorting">
                         <p class="sorting__heading">Сортировать по:</p>
@@ -256,9 +420,69 @@
                     </div>
                 </div>
 
-                <ul class="catalog__list">
+                <div class="catalog__info" data-target="entrance">
+                    <p class="catalog__info-left">Представлено: <span>1 392</span> товара</p>
+                    <div class="catalog__info-right sorting">
+                        <p class="sorting__heading">Сортировать по:</p>
+                        <button class="sorting__btn">
+                            сначала новые
+                        </button>
+                        <form class="sorting__form">
+                            <label class="sorting__form-label">
+                                <input type="radio" class="sorting__form-label__input" name="SORT"
+                                    value="Сначала новые">
+                                <span class="sorting__form-label__radio"></span>
+                                <span class="sorting__form-label__span">Сначала новые</span>
+                            </label>
+                            <label class="sorting__form-label">
+                                <input type="radio" class="sorting__form-label__input" name="SORT"
+                                    value="Сначала недорогие">
+                                <span class="sorting__form-label__radio"></span>
+                                <span class="sorting__form-label__span">Сначала недорогие</span>
+                            </label>
+                            <label class="sorting__form-label">
+                                <input type="radio" class="sorting__form-label__input" name="SORT"
+                                    value="Сначала дорогие">
+                                <span class="sorting__form-label__radio"></span>
+                                <span class="sorting__form-label__span">Сначала дорогие</span>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="catalog__info" data-target="systems">
+                    <p class="catalog__info-left">Представлено: <span>1 392</span> товара</p>
+                    <div class="catalog__info-right sorting">
+                        <p class="sorting__heading">Сортировать по:</p>
+                        <button class="sorting__btn">
+                            сначала новые
+                        </button>
+                        <form class="sorting__form">
+                            <label class="sorting__form-label">
+                                <input type="radio" class="sorting__form-label__input" name="SORT"
+                                    value="Сначала новые">
+                                <span class="sorting__form-label__radio"></span>
+                                <span class="sorting__form-label__span">Сначала новые</span>
+                            </label>
+                            <label class="sorting__form-label">
+                                <input type="radio" class="sorting__form-label__input" name="SORT"
+                                    value="Сначала недорогие">
+                                <span class="sorting__form-label__radio"></span>
+                                <span class="sorting__form-label__span">Сначала недорогие</span>
+                            </label>
+                            <label class="sorting__form-label">
+                                <input type="radio" class="sorting__form-label__input" name="SORT"
+                                    value="Сначала дорогие">
+                                <span class="sorting__form-label__radio"></span>
+                                <span class="sorting__form-label__span">Сначала дорогие</span>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+
+                <ul class="catalog__list active" data-target="interior">
                     <li class="catalog__list-item">
-                        <img src="/src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
                         <div class="catalog__list-item__top">
                             <p class="card-subtitle heading4">Межкомнатная дверь</p>
                             <p class="card-title heading2">Сорренто</p>
@@ -297,7 +521,7 @@
                     </li>
 
                     <li class="catalog__list-item">
-                        <img src="/src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
                         <div class="catalog__list-item__top">
                             <p class="card-subtitle heading4">Межкомнатная дверь</p>
                             <p class="card-title heading2">Сорренто</p>
@@ -333,7 +557,7 @@
                     </li>
 
                     <li class="catalog__list-item">
-                        <img src="/src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
                         <div class="catalog__list-item__top">
                             <p class="card-subtitle heading4">Межкомнатная дверь</p>
                             <p class="card-title heading2">Сорренто</p>
@@ -369,7 +593,7 @@
                     </li>
 
                     <li class="catalog__list-item">
-                        <img src="/src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
                         <div class="catalog__list-item__top">
                             <p class="card-subtitle heading4">Межкомнатная дверь</p>
                             <p class="card-title heading2">Сорренто</p>
@@ -405,7 +629,7 @@
                     </li>
 
                     <li class="catalog__list-item">
-                        <img src="/src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
                         <div class="catalog__list-item__top">
                             <p class="card-subtitle heading4">Межкомнатная дверь</p>
                             <p class="card-title heading2">Сорренто</p>
@@ -444,7 +668,7 @@
                     </li>
 
                     <li class="catalog__list-item">
-                        <img src="/src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
                         <div class="catalog__list-item__top">
                             <p class="card-subtitle heading4">Межкомнатная дверь</p>
                             <p class="card-title heading2">Сорренто</p>
@@ -480,7 +704,7 @@
                     </li>
 
                     <li class="catalog__list-item">
-                        <img src="/src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
                         <div class="catalog__list-item__top">
                             <p class="card-subtitle heading4">Межкомнатная дверь</p>
                             <p class="card-title heading2">Сорренто</p>
@@ -516,7 +740,7 @@
                     </li>
 
                     <li class="catalog__list-item">
-                        <img src="/src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
                         <div class="catalog__list-item__top">
                             <p class="card-subtitle heading4">Межкомнатная дверь</p>
                             <p class="card-title heading2">Сорренто</p>
@@ -552,7 +776,7 @@
                     </li>
 
                     <li class="catalog__list-item">
-                        <img src="/src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
                         <div class="catalog__list-item__top">
                             <p class="card-subtitle heading4">Межкомнатная дверь</p>
                             <p class="card-title heading2">Сорренто</p>
@@ -590,6 +814,896 @@
                         </div>
                     </li>
                 </ul>
+
+                <ul class="catalog__list" data-target="entrance">
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-stock">
+                                <span></span>
+                                <span>Нет в наличии</span>
+                            </p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-stock">
+                                <span></span>
+                                <span>Нет в наличии</span>
+                            </p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-stock">
+                                <span></span>
+                                <span>Нет в наличии</span>
+                            </p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="catalog__list" data-target="systems">
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-stock">
+                                <span></span>
+                                <span>Нет в наличии</span>
+                            </p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-stock">
+                                <span></span>
+                                <span>Нет в наличии</span>
+                            </p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-price">12 000 &#8381;</p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="catalog__list-item">
+                        <img src="./src/images/popular-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">Межкомнатная дверь</p>
+                            <p class="card-title heading2">Сорренто</p>
+                        </div>
+                        <div class="card__color-list__container">
+                            <ul class="card__color-list">
+                                <li class="card__color-list__item active">
+                                    <span class="brown"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="light-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gray"></span>
+                                </li>
+                                <li class="card__color-list__item">
+                                    <span class="dark-gold"></span>
+                                </li>
+                            </ul>
+                            <button class="card__color-more heading4">+4</button>
+                        </div>
+                        <div class="card-bottom">
+                            <p class="card-stock">
+                                <span></span>
+                                <span>Нет в наличии</span>
+                            </p>
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="catalog__list" data-target="accessories">
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img1.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Петли</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img2.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Замки</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img3.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Ручки</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img4.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Погонаж</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img5.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Плинтуса</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img6.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Цилиндры</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img7.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Завертки</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img8.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Фиксаторы</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img9.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Пороги</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img10.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Элементы декора</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img11.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Ограничители</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                    <li class="catalog__list-item">
+                        <img src="./src/images/catalog-acc-img12.png" alt="" class="catalog__list-item__img">
+                        <div class="catalog__list-item__top">
+                            <p class="card-subtitle heading4">1 256 ТОВАРов</p>
+                            <p class="card-title heading2">Доводчики</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a href="#" class="card-btn">
+                                <svg width="23" height="16" viewBox="0 0 23 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.9203 8.70711C22.3108 8.31658 22.3108 7.68342 21.9203 7.29289L15.5563 0.928932C15.1658 0.538408 14.5327 0.538408 14.1421 0.928932C13.7516 1.31946 13.7516 1.95262 14.1421 2.34315L19.799 8L14.1421 13.6569C13.7516 14.0474 13.7516 14.6805 14.1421 15.0711C14.5327 15.4616 15.1658 15.4616 15.5563 15.0711L21.9203 8.70711ZM0 9L21.2132 9V7L0 7L0 9Z"
+                                        fill="#A0A1A5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="#" class="card-link mobile"></a>
+                    </li>
+                </ul>
+
                 <div class="swiper-controllers">
                     <div class="prev">
                         <svg width="24" height="8" viewBox="0 0 24 8" fill="none" xmlns="http://www.w3.org/2000/svg">
