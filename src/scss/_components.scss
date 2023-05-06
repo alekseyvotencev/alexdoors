@@ -972,14 +972,57 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
 
     &__item {
         position: relative;
+        transition: margin 0.2s ease-in-out;
 
         &:not(:last-child) {
             margin-bottom: 1.4rem;
         }
 
         &.active {
+            margin-top: 1.5rem;
             margin-bottom: 3.2rem;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .card__color-list__item-btn {
+                span {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &-btn {
             span {
+                display: inline-block;
+                position: relative;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+
+                &.brown {
+                    background-color: #413434;
+                }
+
+                &.light-gray {
+                    background-color: #d9d9d9;
+                }
+
+                &.dark-gray {
+                    background-color: #a2a2a2;
+                }
+
+                &.dark-gold {
+                    background-color: #a2865d;
+                }
+
                 &::after {
                     content: "";
                     position: absolute;
@@ -989,31 +1032,9 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
                     height: 4.5rem;
                     border-radius: 50%;
                     border: 1px solid rgba(131, 142, 156, 0.3);
+                    opacity: 0;
+                    transition: opacity 0.2s ease-in-out;
                 }
-            }
-        }
-
-        span {
-            display: inline-block;
-            position: relative;
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-
-            &.brown {
-                background-color: #413434;
-            }
-
-            &.light-gray {
-                background-color: #d9d9d9;
-            }
-
-            &.dark-gray {
-                background-color: #a2a2a2;
-            }
-
-            &.dark-gold {
-                background-color: #a2865d;
             }
         }
     }
@@ -1045,9 +1066,11 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
                     }
                 }
 
-                span {
-                    width: 2.8rem;
-                    height: 2.8rem;
+                &-btn {
+                    span {
+                        width: 2.8rem;
+                        height: 2.8rem;
+                    }
                 }
             }
         }

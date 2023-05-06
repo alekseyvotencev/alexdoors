@@ -211,10 +211,14 @@
                             }
 
                             button {
-                                width: 4rem;
-                                height: 4rem;
                                 position: relative;
                                 border-radius: 50%;
+
+                                svg {
+                                    width: 4rem;
+                                    height: 4rem;
+                                    object-fit: contain;
+                                }
 
                                 &::after {
                                     content: "";
@@ -233,30 +237,6 @@
                                     &::after {
                                         opacity: 1;
                                     }
-                                }
-
-                                &.btn1 {
-                                    background-color: #8f7272;
-                                }
-
-                                &.btn2 {
-                                    background-color: #c6bda1;
-                                }
-
-                                &.btn3 {
-                                    background-color: #727e8f;
-                                }
-
-                                &.btn4 {
-                                    background-color: #81728f;
-                                }
-
-                                &.btn5 {
-                                    background-color: #434150;
-                                }
-
-                                &.btn6 {
-                                    background-color: #504141;
                                 }
                             }
                         }
@@ -384,9 +364,17 @@
                             height: 100%;
                         }
                         svg {
-                            width: 2.2rem;
-                            height: 1.2rem;
                             object-fit: contain;
+
+                            &.cross {
+                                width: 2.3rem;
+                                height: 2.3rem;
+                            }
+
+                            &.arrow {
+                                width: 2.2rem;
+                                height: 1.2rem;
+                            }
                         }
                     }
                 }
@@ -610,8 +598,10 @@
                                 }
 
                                 button {
-                                    width: 8rem;
-                                    height: 8rem;
+                                    svg {
+                                        width: 8rem;
+                                        height: 8rem;
+                                    }
 
                                     &.active {
                                         &::after {
@@ -656,8 +646,15 @@
 
                         &-btn {
                             svg {
-                                width: 4.4rem;
-                                height: 2.4rem;
+                                &.cross {
+                                    width: 4.6rem;
+                                    height: 4.6rem;
+                                }
+
+                                &.arrow {
+                                    width: 4.4rem;
+                                    height: 2.4rem;
+                                }
                             }
                         }
                     }
@@ -714,7 +711,6 @@
                     }
 
                     &-bottom {
-
                         &-text {
                             margin-right: 1.4rem;
                         }

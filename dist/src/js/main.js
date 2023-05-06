@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const header = document.querySelector('header');
+    const body = document.body;
+    const html = document.documentElement;
 
     // Пересчет rem в px 
     const rem = function (rem) {
@@ -21,6 +23,30 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // функция открытия попапа
+    function openPopupElement(element) {
+        if (window.innerWidth > 768) {
+            let scrollWidth = (window.innerWidth - body.clientWidth);
+            body.style.paddingRight = `${scrollWidth}px`;
+            header.style.paddingRight = `${scrollWidth}px`
+        }
+        body.classList.add('lock', 'dark');
+        html.classList.add('lock');
+        element.classList.add('active');
+    }
+
+    // функция закрытия попапа
+    function closePopupElement(element) {
+        body.classList.remove('lock');
+        body.classList.remove('dark');
+        html.classList.remove('lock');
+        element.classList.remove('active');
+        if (window.innerWidth > 768) {
+            body.style.paddingRight = '0';
+            header.style.paddingRight = '0';
+        }
+    }
+
     // телефон и поиск в хедере на главной - белые
 
     if (document.querySelector('.main-hero__right-info')) {
@@ -33,6 +59,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.querySelector('.header__phone.desktop').style.color = '#FFFFFF';
     }
+
+    // мобильное меню 
+
+    const burger = header.querySelector('.header__burger');
+    const mobileMenu = header.querySelector('.header__menu');
+    burger.addEventListener('click', function () {
+        document.body.classList.toggle('lock');
+        header.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    })
 
     // кнопка в секции Точь в точь на мобилке
 
@@ -226,13 +262,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    // чекбоксы в фильтрах, чтобы сменился фон
+    // чекбоксы + радио в фильтрах, чтобы сменился фон, при радио кнопке чтобы текст подставлялся 
 
     if (document.querySelector('.filters-select')) {
         const filterSelects = document.querySelectorAll('.filters-select');
         filterSelects.forEach(select => {
+
             const filterForm = select.querySelector('.filters__item');
-            select.addEventListener('click', function (e) {
+            select.addEventListener('click', function () {
 
                 filterSelects.forEach(item => {
                     if (item !== select) {
@@ -242,16 +279,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 filterForm.classList.toggle('active');
                 clickOutside(select, filterForm);
             })
-        })
 
-        const filterLabels = document.querySelectorAll('.filters__item-label');
-        filterLabels.forEach(label => {
-            const filterInput = label.querySelector('.filters__item-label__input');
-            filterInput.addEventListener('change', function (e) {
-                if (e.target.checked) e.target.parentElement.classList.add('active');
-                else e.target.parentElement.classList.remove('active');
+            const filterLabels = select.querySelectorAll('.filters__item-label');
+            filterLabels.forEach(label => {
+                const filterInput = label.querySelector('.filters__item-label__input');
+                filterInput.addEventListener('change', function (e) {
+                    if (e.target.type === 'checkbox') {
+                        if (e.target.checked) e.target.parentElement.classList.add('active');
+                        else e.target.parentElement.classList.remove('active');
+                    } else if (e.target.type === 'radio') {
+                        if (e.target.checked) {
+                            select.querySelectorAll('.filters__item-label').forEach(label => label.classList.remove('active'));
+                            e.target.parentElement.classList.add('active');
+                            const radioValue = e.target.value;
+                            select.querySelector('.filters-select__title').innerText = radioValue;
+                            select.querySelector('.filters__item').classList.remove('active');
+                        }
+                    }
+
+                })
             })
         })
+
+
     }
 
     // кнопка Развернуть фмльтры в мобилке
@@ -310,6 +360,18 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // выбор цвета двери в карточке на странице Каталог
+
+    if (document.querySelector('.card__color-list__item-btn')) {
+        const cardChooseColorBtns = document.querySelectorAll('.card__color-list__item-btn');
+        cardChooseColorBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                btn.parentElement.parentElement.parentElement.querySelectorAll('.card__color-list__item').forEach(item => item.classList.remove('active'));
+                btn.parentElement.classList.add('active');
+            })
+        })
+    }
+
     // переворачивание фоток дверей
 
     if (document.querySelector('.flip-btn')) {
@@ -323,7 +385,6 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
     }
-
 
     // ОТЗЫВЫ
 
@@ -362,112 +423,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-
-    // КАРТОЧКА МЕЖКОМНАТНОЙ ДВЕРИ
-
-    // выбор полотна и тд
-
-    if (document.querySelector('.canvas-popup')) {
-        const canvasPopup = document.querySelector('.canvas-popup');
-        document.querySelector('.interior__card-left__options-item.canvas').addEventListener('click', function () {
-            let scrollWidth = (window.innerWidth - document.body.clientWidth);
-            header.style.paddingRight = `${scrollWidth}px`
-            document.body.style.paddingRight = `${scrollWidth}px`;
-            document.body.classList.add('lock', 'dark');
-            canvasPopup.classList.add('active');
-        })
-
-        const canvasClose = canvasPopup.querySelector('.popup__close');
-        canvasClose.addEventListener('click', function () {
-            header.style.paddingRight = `0`
-            document.body.style.paddingRight = `0`;
-            document.body.classList.remove('lock', 'dark');
-            canvasPopup.classList.remove('active');
-        })
-
-        const popupSelects = canvasPopup.querySelector('.popup-select');
-        popupSelects.addEventListener('click', function () {
-            const popupFilterItem = popupSelects.querySelector('.filters__item');
-            popupFilterItem.classList.toggle('active');
-
-            if (popupFilterItem.querySelector('.filters__item-label__input').checked) {
-                popupFilterItem.querySelector('.filters__item-label__input').parentElement.classList.add('active');
-            } else popupFilterItem.querySelector('.filters__item-label__input').parentElement.classList.remove('active');
-        })
-
-
-    }
-
-    // выбор ручек
-
-    if (document.querySelector('.options-popup')) {
-        const optionsPopup = document.querySelector('.options-popup');
-
-        document.querySelector('.interior__card-left__options-item.options').addEventListener('click', function () {
-            let scrollWidth = (window.innerWidth - document.body.clientWidth);
-            header.style.paddingRight = `${scrollWidth}px`
-            document.body.style.paddingRight = `${scrollWidth}px`;
-            document.body.classList.add('lock', 'dark');
-            optionsPopup.classList.add('active');
-        })
-
-        const optionsClose = optionsPopup.querySelector('.popup__close');
-        optionsClose.addEventListener('click', function () {
-            header.style.paddingRight = `0`
-            document.body.style.paddingRight = `0`;
-            document.body.classList.remove('lock', 'dark');
-            optionsPopup.classList.remove('active');
-        })
-
-        const optionsCards = optionsPopup.querySelectorAll('.options-popup__list-item');
-        optionsCards.forEach(element => {
-            element.addEventListener('click', function (e) {
-                optionsCards.forEach(item => item.classList.remove('active'));
-                if (e.target !== element.querySelector('.card-btn')) {
-                    element.classList.add('active');
-                }
-            })
-        });
-    }
-
-    // выбор внешней панели
-
-    if (document.querySelector('.panel-popup')) {
-        const panelPopup = document.querySelector('.panel-popup');
-
-        document.querySelector('.interior__card-left__options-item.panel').addEventListener('click', function () {
-            let scrollWidth = (window.innerWidth - document.body.clientWidth);
-            header.style.paddingRight = `${scrollWidth}px`
-            document.body.style.paddingRight = `${scrollWidth}px`;
-            document.body.classList.add('lock', 'dark');
-            panelPopup.classList.add('active');
-        })
-
-        const panelClose = panelPopup.querySelector('.popup__close');
-        panelClose.addEventListener('click', function () {
-            header.style.paddingRight = `0`
-            document.body.style.paddingRight = `0`;
-            document.body.classList.remove('lock', 'dark');
-            panelPopup.classList.remove('active');
-        })
-
-        const panelCards = panelPopup.querySelectorAll('.panel-popup__list-item');
-        panelCards.forEach(element => {
-            element.addEventListener('click', function (e) {
-                panelCards.forEach(item => item.classList.remove('active'));
-                if (e.target !== element.querySelector('.card-btn')) {
-                    element.classList.add('active');
-                }
-            })
-        });
-    }
+    // КАРТОЧКИ ДВЕРЕЙ
 
     // выбор цвета
 
-    if (document.querySelector('.color-popup')) {
+    if (document.querySelector('.choose-color-btn')) {
         const colorPopup = document.querySelector('.color-popup');
-
-        const chooseColorBtns = document.querySelectorAll('.interior__card-left__options-color-list-item > button');
+        const chooseColorBtns = document.querySelectorAll('.choose-color-btn');
         chooseColorBtns.forEach(btn => {
             btn.addEventListener('click', function () {
                 let scrollWidth = (window.innerWidth - document.body.clientWidth);
@@ -490,45 +452,113 @@ document.addEventListener('DOMContentLoaded', function () {
         colorCards.forEach(element => {
             element.addEventListener('click', function (e) {
                 colorCards.forEach(item => item.classList.remove('active'));
-                if (e.target !== element.querySelector('.card-btn')) {
-                    element.classList.add('active');
-                }
+                element.classList.add('active');
             })
         });
     }
 
+    // выбор опций
+
+    if (document.querySelector('.choose-options-btn')) {
+        const optionPopup = document.querySelector('.options-popup');
+        const chooseOptionsBtns = document.querySelectorAll('.choose-options-btn');
+        const closeOptionPopup = optionPopup.querySelector('.popup__close');
+
+        chooseOptionsBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                openPopupElement(optionPopup);
+            })
+        })
+
+        closeOptionPopup.addEventListener('click', function () {
+            closePopupElement(optionPopup);
+        })
+    }
+
     // выбор стекла
 
-
-    if (document.querySelector('.glass-popup')) {
+    if (document.querySelector('.choose-glass-btn')) {
         const glassPopup = document.querySelector('.glass-popup');
 
-        const chooseglassBtns = document.querySelectorAll('.interior__card-left__options-glass-list-item > button');
+        const chooseglassBtns = document.querySelectorAll('.choose-glass-btn');
         chooseglassBtns.forEach(btn => {
             btn.addEventListener('click', function () {
-                let scrollWidth = (window.innerWidth - document.body.clientWidth);
-                header.style.paddingRight = `${scrollWidth}px`
-                document.body.style.paddingRight = `${scrollWidth}px`;
-                document.body.classList.add('lock', 'dark');
-                glassPopup.classList.add('active');
+                openPopupElement(glassPopup);
             })
         })
 
         const glassClose = glassPopup.querySelector('.popup__close');
         glassClose.addEventListener('click', function () {
-            header.style.paddingRight = `0`
-            document.body.style.paddingRight = `0`;
-            document.body.classList.remove('lock', 'dark');
-            glassPopup.classList.remove('active');
+            closePopupElement(glassPopup);
         })
 
         const glassCards = glassPopup.querySelectorAll('.glass-popup__list-item');
         glassCards.forEach(element => {
             element.addEventListener('click', function (e) {
                 glassCards.forEach(item => item.classList.remove('active'));
-                if (e.target !== element.querySelector('.card-btn')) {
-                    element.classList.add('active');
-                }
+                element.classList.add('active');
+            })
+        });
+    }
+
+    if (document.querySelector('.choose-options2-btn')) {
+        const optionPopup2 = document.querySelector('.options-popup2');
+        const chooseOptions2Btns = document.querySelectorAll('.choose-options2-btn');
+        const closeoptionPopup2 = optionPopup2.querySelector('.popup__close');
+
+        chooseOptions2Btns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                openPopupElement(optionPopup2);
+            })
+        })
+
+        closeoptionPopup2.addEventListener('click', function () {
+            closePopupElement(optionPopup2);
+        })
+    }
+
+    // выбор ручек
+
+    if (document.querySelector('.choose-accessories-btn')) {
+        const accessoriesPopup = document.querySelector('.accessories-popup');
+
+        document.querySelector('.choose-accessories-btn').addEventListener('click', function () {
+            openPopupElement(accessoriesPopup);
+        })
+
+        const accessoriesClose = accessoriesPopup.querySelector('.popup__close');
+        accessoriesClose.addEventListener('click', function () {
+            closePopupElement(accessoriesPopup);
+        })
+
+        const accessoriesCards = accessoriesPopup.querySelectorAll('.accessories-popup__list-item');
+        accessoriesCards.forEach(element => {
+            element.addEventListener('click', function () {
+                accessoriesCards.forEach(item => item.classList.remove('active'));
+                element.classList.add('active');
+            })
+        });
+    }
+
+    // выбор внешней панели
+
+    if (document.querySelector('.choose-panel-btn')) {
+        const panelPopup = document.querySelector('.panel-popup');
+
+        document.querySelector('.choose-panel-btn').addEventListener('click', function () {
+            openPopupElement(panelPopup)
+        })
+
+        const panelClose = panelPopup.querySelector('.popup__close');
+        panelClose.addEventListener('click', function () {
+            closePopupElement(panelPopup)
+        })
+
+        const panelCards = panelPopup.querySelectorAll('.panel-popup__list-item');
+        panelCards.forEach(element => {
+            element.addEventListener('click', function (e) {
+                panelCards.forEach(item => item.classList.remove('active'));
+                element.classList.add('active');
             })
         });
     }
@@ -576,5 +606,16 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.classList.remove('lock');
         })
     }
-})
 
+    // кнопки квиза
+
+    if (document.querySelector('.quiz__list-item')) {
+        const quizItems = document.querySelectorAll('.quiz__list-item');
+        quizItems.forEach(item => {
+            item.addEventListener('click', function () {
+                quizItems.forEach(el => el.classList.remove('active'));
+                item.classList.add('active');
+            })
+        })
+    }
+})

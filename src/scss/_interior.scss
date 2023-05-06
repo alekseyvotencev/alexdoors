@@ -134,10 +134,14 @@
                             }
 
                             button {
-                                width: 4rem;
-                                height: 4rem;
                                 position: relative;
                                 border-radius: 50%;
+
+                                svg {
+                                    width: 4rem;
+                                    height: 4rem;
+                                    object-fit: contain;
+                                }
 
                                 &::after {
                                     content: "";
@@ -156,30 +160,6 @@
                                     &::after {
                                         opacity: 1;
                                     }
-                                }
-
-                                &.btn1 {
-                                    background-color: #8f7272;
-                                }
-
-                                &.btn2 {
-                                    background-color: #c6bda1;
-                                }
-
-                                &.btn3 {
-                                    background-color: #727e8f;
-                                }
-
-                                &.btn4 {
-                                    background-color: #81728f;
-                                }
-
-                                &.btn5 {
-                                    background-color: #434150;
-                                }
-
-                                &.btn6 {
-                                    background-color: #504141;
                                 }
                             }
                         }
@@ -258,6 +238,7 @@
                     display: flex;
                     align-items: center;
                     background-color: $white;
+                    cursor: pointer;
 
                     &:not(:last-of-type) {
                         margin-bottom: 3rem;
@@ -587,8 +568,10 @@
                                 }
 
                                 button {
-                                    width: 8rem;
-                                    height: 8rem;
+                                    svg {
+                                        width: 8rem;
+                                        height: 8rem;
+                                    }
 
                                     &.active {
                                         &::after {

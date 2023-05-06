@@ -80,6 +80,7 @@
             width: 50.7rem;
             position: relative;
             background-color: $white;
+            cursor: pointer;
 
             &:not(:nth-child(-n + 3)) {
                 margin-top: 4rem;
@@ -128,6 +129,23 @@
                         position: relative;
                         right: auto;
                         bottom: auto;
+                    }
+                }
+            }
+
+            &.active {
+                .quiz__list-item__btn {
+                    background-color: transparent;
+                    box-shadow: $btnBoxShadow;
+
+                    &::before {
+                        opacity: 1;
+                    }
+
+                    svg {
+                        path {
+                            fill: $white;
+                        }
                     }
                 }
             }
