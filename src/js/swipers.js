@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const doorHeroSwiper = new Swiper(element, {
                 slidesPerView: 'auto',
                 spaceBetween: rem(4),
+                loop: true,
                 pagination: {
                     el: element.querySelector('.door-category__swiper__pagination'),
                     renderBullet: function (index, className) {
@@ -143,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Карточка товара (аксессуары) 
 
     const accessoryPageSwiper = new Swiper('.accessory-page__content-left .swiper-container', {
-
+        loop: true,
         pagination: {
             el: '.accessory-page__content-left .pagination',
         },

@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     center: [56.832639, 60.627433],
                     zoom: 14
                 });
-
+                myMap.controls.remove('searchControl');
                 const placemark = new ymaps.Placemark([56.827444, 60.655299], {},
                     {
                         iconLayout: 'default#image',
@@ -131,13 +131,15 @@ document.addEventListener('DOMContentLoaded', function () {
             function init() {
                 const myMap = new ymaps.Map("map", {
                     center: [56.832639, 60.627433],
-                    zoom: 14
+                    zoom: 14,
                 });
+
+                myMap.controls.remove('searchControl');
 
                 const placemark = new ymaps.Placemark([56.827444, 60.655299], {},
                     {
                         iconLayout: 'default#image',
-                        iconImageHref: '/src/images/svg/placemark.svg',
+                        iconImageHref: './src/images/svg/placemark.svg',
                         iconImageSize: [rem(3), rem(3)],
                         iconImageOffset: [rem(0), rem(-3)]
                     })
