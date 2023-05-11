@@ -60,12 +60,42 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.header__phone.desktop').style.color = '#FFFFFF';
     }
 
+    // поиск в хедере 
+
+    const headerSearchOpen = header.querySelector('.header__search');
+    const headerSearchContainer = document.querySelector('.header__search-container');
+    headerSearchOpen.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+            document.body.classList.toggle('lock');
+        }
+        headerSearchContainer.classList.add('active');
+        clickOutside(header, headerSearchContainer)
+    })
+
+    const inputSearch = headerSearchContainer.querySelector('.header__search-form__input');
+    const headerSearchDropdown = headerSearchContainer.querySelector('.header__search-dropdown');
+    inputSearch.addEventListener('input', function () {
+        if (inputSearch.value) {
+            headerSearchDropdown.classList.add('active');
+        } else {
+            headerSearchDropdown.classList.remove('active');
+        }
+    })
+    const inputSearchClose = headerSearchContainer.querySelector('.header__search-form__close');
+    inputSearchClose.addEventListener('click', function (e) {
+        e.preventDefault();
+        inputSearch.value = '';
+        headerSearchContainer.classList.remove('active');
+    })
+
+
     // мобильное меню 
 
     const burger = header.querySelector('.header__burger');
     const mobileMenu = header.querySelector('.header__menu');
     burger.addEventListener('click', function () {
         document.body.classList.toggle('lock');
+        burger.classList.toggle('active');
         header.classList.toggle('active');
         mobileMenu.classList.toggle('active');
     })
@@ -118,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const placemark = new ymaps.Placemark([56.827444, 60.655299], {},
                     {
                         iconLayout: 'default#image',
-                        iconImageHref: '/src/images/svg/placemark.svg',
+                        iconImageHref: './src/images/svg/placemark.svg',
                         iconImageSize: [rem(6.5), rem(6.5)],
                         iconImageOffset: [rem(0), rem(-6.5)]
                     })
@@ -192,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 getPointOptions = function () {
                     return {
                         iconLayout: 'default#image',
-                        iconImageHref: '/src/images/svg/placemark.svg',
+                        iconImageHref: './src/images/svg/placemark.svg',
                         iconImageSize: [rem(6.5), rem(6.5)],
                         iconImageOffset: [rem(0), rem(-6.5)]
                     };
@@ -244,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 getPointOptions = function () {
                     return {
                         iconLayout: 'default#image',
-                        iconImageHref: '/src/images/svg/placemark.svg',
+                        iconImageHref: './src/images/svg/placemark.svg',
                         iconImageSize: [rem(3), rem(3)],
                         iconImageOffset: [rem(0), rem(-3)]
                     };
