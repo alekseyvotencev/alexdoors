@@ -80,11 +80,9 @@
         }
     }
 
-    &__btn-measurer {
-        margin-right: 15.1rem;
-    }
-
     &__search {
+        margin-left: auto;
+        margin-right: 10.7rem;
         svg {
             width: 2.3rem;
             height: 2.3rem;
@@ -276,7 +274,6 @@
     }
 
     &__phone {
-        margin-left: auto;
         font-weight: 700;
         font-size: 1.8rem;
         line-height: 2.2rem;

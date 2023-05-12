@@ -493,7 +493,9 @@
     z-index: 10;
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.3s ease-in-out;
+    transition-property: transform, opacity, visibility;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
     background-color: rgba(33, 37, 44, 0.6);
 
     &.active {

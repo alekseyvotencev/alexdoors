@@ -604,10 +604,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const closePopupBtns = document.querySelectorAll('.pop-up__close');
         closePopupBtns.forEach(btn => {
             btn.addEventListener('click', function () {
-                header.style.paddingRight = `0`
-                document.body.style.paddingRight = `0`;
-                btn.parentElement.parentElement.classList.remove('active');
-                document.body.classList.remove('lock');
+                closePopupElement(btn.parentElement.parentElement);
             })
         })
     }
@@ -615,27 +612,39 @@ document.addEventListener('DOMContentLoaded', function () {
     // модалка заявки на замер
 
     if (document.querySelector('.popup-measuring')) {
-        const popupMeasuring = document.querySelector('.popup-measuring');
-        const measuringBtn = document.querySelector('.header__btn-measurer');
+        let popupMeasuring = document.querySelector('.popup-measuring');
+        let measuringBtn = document.querySelector('.header__btn-measurer');
         measuringBtn.addEventListener('click', function () {
-            let scrollWidth = (window.innerWidth - document.body.clientWidth);
-            header.style.paddingRight = `${scrollWidth}px`
-            document.body.style.paddingRight = `${scrollWidth}px`;
-            document.body.classList.add('lock');
-            popupMeasuring.classList.add('active')
+            openPopupElement(popupMeasuring);
+        })
+    }
+
+    if (document.querySelector('.measurement-section__btn')) {
+        let popupMeasuring = document.querySelector('.popup-measuring');
+        let measuringSectionBtn = document.querySelector('.measurement-section__btn');
+        measuringSectionBtn.addEventListener('click', function () {
+            openPopupElement(popupMeasuring)
+        })
+    }
+
+    // модалка способов оплаты
+
+    if (document.querySelector('.popup-payment')) {
+        let popupPayment = document.querySelector('.popup-payment');
+        let footerPaymentsWays = document.querySelector('.popup-payment-open');
+        footerPaymentsWays.addEventListener('click', function () {
+            console.log('123');
+            openPopupElement(popupPayment);
         })
     }
 
     // модалка успешной заявки на замер
 
     if (document.querySelector('.popup-measuring-success')) {
-        const popupSuccessMeasuring = document.querySelector('.popup-measuring-success');
-        const successMeasuringBtn = popupSuccessMeasuring.querySelector('.pop-up__btn');
+        let popupSuccessMeasuring = document.querySelector('.popup-measuring-success');
+        let successMeasuringBtn = popupSuccessMeasuring.querySelector('.pop-up__btn');
         successMeasuringBtn.addEventListener('click', function () {
-            header.style.paddingRight = `0`
-            document.body.style.paddingRight = `0`;
-            successMeasuringBtn.parentElement.parentElement.classList.remove('active');
-            document.body.classList.remove('lock');
+            closePopupElement(successMeasuringBtn.parentElement.parentElement)
         })
     }
 
