@@ -137,3 +137,10 @@ input[type="number"] {
         width: 100%;
     }
 }
+
+@media (min-width: 120.01em) {
+    html {
+        font-size: 0.45vw;
+    }
+   
+}

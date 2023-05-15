@@ -52,12 +52,31 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelector('.main-hero__right-info')) {
 
         if (window.innerWidth > 768) {
-            document.querySelectorAll('.header__search svg path').forEach(element => {
+            const headerSearchPaths = document.querySelectorAll('.header__search svg path');
+            headerSearchPaths.forEach(element => {
                 element.style.stroke = '#FFFFFF';
+            })
+
+            const headerPhone = document.querySelector('.header__phone.desktop');
+            headerPhone.style.color = '#FFFFFF';
+            let mainHeroThumbs = document.querySelector('.main-hero__swiper-thumbs');
+            const offsetTop = mainHeroThumbs.offsetTop;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY >= offsetTop - headerPhone.offsetTop - rem(2.5)) {
+                    headerSearchPaths.forEach(element => {
+                        element.style.stroke = '#21252C';
+                    })
+                    headerPhone.style.color = '#21252C';
+                } else {
+                    headerSearchPaths.forEach(element => {
+                        element.style.stroke = '#FFFFFF';
+                    })
+                    headerPhone.style.color = '#FFFFFF';
+                }
             })
         }
 
-        document.querySelector('.header__phone.desktop').style.color = '#FFFFFF';
+
     }
 
     // поиск в хедере 
