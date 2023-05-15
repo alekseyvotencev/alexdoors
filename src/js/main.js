@@ -50,34 +50,48 @@ document.addEventListener('DOMContentLoaded', function () {
     // телефон и поиск в хедере на главной - белые
 
     if (document.querySelector('.main-hero__right-info')) {
+        let headerSearch = document.querySelector('.header__search');
+        let headerPhone = document.querySelector('.header__phone.desktop');
+
 
         if (window.innerWidth > 768) {
-            const headerSearchPaths = document.querySelectorAll('.header__search svg path');
-            headerSearchPaths.forEach(element => {
-                element.style.stroke = '#FFFFFF';
-            })
-
-            const headerPhone = document.querySelector('.header__phone.desktop');
-            headerPhone.style.color = '#FFFFFF';
             let mainHeroThumbs = document.querySelector('.main-hero__swiper-thumbs');
             const offsetTop = mainHeroThumbs.offsetTop;
+
+            if (window.scrollY >= offsetTop - headerPhone.offsetTop - rem(2.5)) {
+                header.classList.add('scroll');
+                headerSearch.classList.remove('white')
+                headerPhone.classList.remove('white');
+            } else {
+                header.classList.remove('scroll');
+                headerSearch.classList.add('white')
+                headerPhone.classList.add('white');
+            }
+
             window.addEventListener('scroll', function () {
                 if (window.scrollY >= offsetTop - headerPhone.offsetTop - rem(2.5)) {
-                    headerSearchPaths.forEach(element => {
-                        element.style.stroke = '#21252C';
-                    })
-                    headerPhone.style.color = '#21252C';
+                    header.classList.add('scroll');
+                    headerSearch.classList.remove('white')
+                    headerPhone.classList.remove('white');
                 } else {
-                    headerSearchPaths.forEach(element => {
-                        element.style.stroke = '#FFFFFF';
-                    })
-                    headerPhone.style.color = '#FFFFFF';
+                    header.classList.remove('scroll');
+                    headerSearch.classList.add('white')
+                    headerPhone.classList.add('white');
                 }
             })
         }
 
 
     }
+
+    // хедер при скролле
+    window.addEventListener('scroll', function () {
+        if (window.scrollY >= rem(10)) {
+            header.classList.add('scroll');
+        } else {
+            header.classList.remove('scroll');
+        }
+    })
 
     // поиск в хедере 
 
