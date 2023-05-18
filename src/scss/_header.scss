@@ -4,7 +4,7 @@
     width: 100%;
     z-index: 3;
 
-    &::after {
+    &::before {
         content: "";
         position: absolute;
         bottom: -1rem;
@@ -21,7 +21,7 @@
     }
 
     &.scroll {
-        &::after {
+        &::before {
             opacity: 1;
             visibility: visible;
         }
@@ -324,6 +324,11 @@
         top: 4rem;
         width: 100%;
         z-index: 3;
+
+        &::before {
+            bottom: -2rem;
+            height: calc(100% + 4rem + 2rem);
+        }
 
         &::after {
             content: "";
