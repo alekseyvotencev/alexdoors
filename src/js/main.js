@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // функция клика вне элемента
+    function clickOutsidePopup(elem, needToClose) {
+        document.addEventListener('click', function (e) {
+            if (e.target !== elem && !elem.contains(e.target)) {
+                closePopupElement(needToClose);
+            }
+        })
+    }
+
     // функция открытия попапа
     function openPopupElement(element) {
         if (window.innerWidth > 768) {
@@ -48,17 +57,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // телефон и поиск в хедере на главной - белые
+    let headerSearch = document.querySelector('.header__search');
+    let headerPhone = document.querySelector('.header__phone.desktop');
 
     if (document.querySelector('.main-hero__right-info')) {
-        let headerSearch = document.querySelector('.header__search');
-        let headerPhone = document.querySelector('.header__phone.desktop');
-
 
         if (window.innerWidth > 768) {
             let mainHeroThumbs = document.querySelector('.main-hero__swiper-thumbs');
-            const offsetTop = mainHeroThumbs.offsetTop;
 
-            if (window.scrollY >= offsetTop - headerPhone.offsetTop - rem(2.5)) {
+            if (window.scrollY >= rem(5)) {
                 header.classList.add('scroll');
                 headerSearch.classList.remove('white')
                 headerPhone.classList.remove('white');
@@ -69,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             window.addEventListener('scroll', function () {
-                if (window.scrollY >= offsetTop - headerPhone.offsetTop - rem(2.5)) {
+                if (window.scrollY >= rem(5)) {
                     header.classList.add('scroll');
                     headerSearch.classList.remove('white')
                     headerPhone.classList.remove('white');
@@ -79,19 +86,36 @@ document.addEventListener('DOMContentLoaded', function () {
                     headerPhone.classList.add('white');
                 }
             })
-        }
-
-
-    }
-
-    // хедер при скролле
-    window.addEventListener('scroll', function () {
-        if (window.scrollY >= rem(10)) {
-            header.classList.add('scroll');
         } else {
-            header.classList.remove('scroll');
+            // хедер при скролле
+            window.addEventListener('scroll', function () {
+                if (window.scrollY >= rem(3)) {
+                    header.classList.add('scroll');
+                } else {
+                    header.classList.remove('scroll');
+                }
+            })
         }
-    })
+
+    } else if (window.innerWidth > 768) {
+        // хедер при скролле
+        window.addEventListener('scroll', function () {
+            if (window.scrollY >= rem(5)) {
+                header.classList.add('scroll');
+            } else {
+                header.classList.remove('scroll');
+            }
+        })
+    } else {
+        // хедер при скролле
+        window.addEventListener('scroll', function () {
+            if (window.scrollY >= rem(3)) {
+                header.classList.add('scroll');
+            } else {
+                header.classList.remove('scroll');
+            }
+        })
+    }
 
     // поиск в хедере 
 
@@ -649,6 +673,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let measuringBtn = document.querySelector('.header__btn-measurer');
         measuringBtn.addEventListener('click', function () {
             openPopupElement(popupMeasuring);
+            clickOutsidePopup(popupMeasuring.querySelector('.pop-up__body'), popupMeasuring)
         })
     }
 
@@ -664,12 +689,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (document.querySelector('.popup-payment')) {
         let popupPayment = document.querySelector('.popup-payment');
+        let popupBody = popupPayment.querySelector('.pop-up__body');
         let footerPaymentsWays = document.querySelector('.popup-payment-open');
         footerPaymentsWays.addEventListener('click', function () {
-            console.log('123');
             openPopupElement(popupPayment);
         })
     }
+
+    const popupWindows = document.querySelectorAll('.pop-up');
+    popupWindows.forEach(popup => {
+        let popupBody = popup.querySelector('.pop-up__body');
+        popup.addEventListener('click', function (e) {
+            if (e.target !== popupBody && !popupBody.contains(e.target)) {
+                console.log(e.target)
+                closePopupElement(popup);
+            }
+        })
+    })
+
+    const popupWindows2 = document.querySelectorAll('.popup');
+    popupWindows2.forEach(popup => {
+        let popupBody = popup.querySelector('.popup__body');
+        popup.addEventListener('click', function (e) {
+            if (e.target !== popupBody && !popupBody.contains(e.target)) {
+                console.log(e.target)
+                closePopupElement(popup);
+            }
+        })
+    })
 
     // модалка успешной заявки на замер
 

@@ -25,6 +25,8 @@
 
             &__item {
                 &-link {
+                    position: relative;
+
                     svg {
                         width: 4.6rem;
                         height: 4.6rem;
@@ -37,11 +39,36 @@
                         }
                     }
 
+                    span {
+                        position: absolute;
+                        left: 50%;
+                        font-size: 1.8rem;
+                        line-height: 2.1rem;
+                        width: max-content;
+                        transform: translateX(-50%);
+                        bottom: -2.5rem;
+                        background: $greenGradient;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-fill-color: transparent;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition-property: opacity, visibility;
+                        transition-duration: 0.2s;
+                        transition-timing-function: ease-in-out;
+                    }
+
                     &:hover {
                         svg {
                             #icon-gradient {
                                 opacity: 1;
                             }
+                        }
+
+                        span {
+                            opacity: 1;
+                            visibility: visible;
                         }
                     }
                 }
@@ -128,6 +155,12 @@
                         svg {
                             width: 7rem;
                             height: 7rem;
+                        }
+
+                        span {
+                            bottom: -3.5rem;
+                            font-size: 3rem;
+                            line-height: 3.6rem;
                         }
                     }
                 }

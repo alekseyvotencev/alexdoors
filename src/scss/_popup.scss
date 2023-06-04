@@ -642,3 +642,23 @@
         }
     }
 }
+
+.popup-quiz {
+    text-align: center;
+
+    .pop-up__body {
+        padding-top: 9rem;
+    }
+
+    .pop-up__description {
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        width: 45rem;
+    }
+
+    @media (max-width: 48em) {
+        .pop-up__description {
+            width: 100%;
+        }
+    }
+}

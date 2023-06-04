@@ -28,11 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 'auto',
         spaceBetween: rem(3),
         loop: true,
-        navigation: {
-            nextEl: '.main-hero__swiper__next',
-            prevEl: '.main-hero__swiper__prev',
-        },
         pagination: {
+            clickable: true,
             el: '.main-hero__swiper-thumbs__pagination',
             renderBullet: function (index, className) {
                 return `<span class="${className}">${getThreeDigitNumber(index + 1)}</span>`;
@@ -53,11 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
         navigation: {
             nextEl: '.main-hero__swiper__next',
             prevEl: '.main-hero__swiper__prev',
-        },
-        thumbs: {
-            swiper: mainHeroSwiperThumbs
-        },
+        }
     })
+    mainHeroSwiper.controller.control = mainHeroSwiperThumbs;
+    mainHeroSwiperThumbs.controller.control = mainHeroSwiper;
+
 
     if (document.querySelector('.door-category__swiper')) {
         document.querySelectorAll('.door-category__swiper').forEach(element => {
@@ -66,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 spaceBetween: rem(4),
                 loop: true,
                 pagination: {
+                    clickable: true,
                     el: element.querySelector('.door-category__swiper__pagination'),
                     renderBullet: function (index, className) {
                         return `<span class="${className}">${getTwoDigitNumber(index + 1)}</span>`;
@@ -79,12 +77,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-
     const mainSelectionSwiper = new Swiper('.selection__swiper', {
         slidesPerView: 'auto',
         spaceBetween: rem(3),
         loop: true,
         pagination: {
+            clickable: true,
             el: '.selection__swiper__pagination',
             renderBullet: function (index, className) {
                 return `<span class="${className}">${getThreeDigitNumber(index + 1)}</span>`;
@@ -101,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: rem(4),
         loop: true,
         pagination: {
+            clickable: true,
             el: '.reviews-section__swiper__pagination',
             renderBullet: function (index, className) {
                 return `<span class="${className}">${getTwoDigitNumber(index + 1)}</span>`;
@@ -116,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 'auto',
         spaceBetween: rem(3),
         pagination: {
+            clickable: true,
             el: '.main-advantages__swiper__pagination',
             renderBullet: function (index, className) {
                 return `<span class="${className}">${getTwoDigitNumber(index + 1)}</span>`;
@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: rem(3),
         loop: true,
         pagination: {
+            clickable: true,
             el: '.catalog-hero__swiper__pagination',
             renderBullet: function (index, className) {
                 return `<span class="${className}">${getThreeDigitNumber(index + 1)}</span>`;
@@ -146,6 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const accessoryPageSwiper = new Swiper('.accessory-page__content-left .swiper-container', {
         loop: true,
         pagination: {
+            clickable: true,
             el: '.accessory-page__content-left .pagination',
         },
         breakpoints: {

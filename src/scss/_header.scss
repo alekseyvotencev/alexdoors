@@ -14,6 +14,7 @@
         background-color: #f4f5f5;
         z-index: -1;
         opacity: 0;
+        box-shadow: 0.5rem 0.5rem 2rem rgba(53, 60, 70, 0.1);
         visibility: hidden;
         transition-property: opacity, visibility;
         transition-duration: 0.2s;
@@ -21,6 +22,8 @@
     }
 
     &.scroll {
+        z-index: 4;
+        
         &::before {
             opacity: 1;
             visibility: visible;

@@ -84,6 +84,8 @@
                 &-item {
                     &-link {
                         display: inline-block;
+                        position: relative;
+
                         svg {
                             width: 3.5rem;
                             height: 3.5rem;
@@ -95,11 +97,36 @@
                             }
                         }
 
+                        span {
+                            position: absolute;
+                            bottom: -2.5rem;
+                            left: 50%;
+                            width: max-content;
+                            font-size: 1.5rem;
+                            line-height: 2.2rem;
+                            background: $greenGradient;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            text-fill-color: transparent;
+                            opacity: 0;
+                            visibility: hidden;
+                            transform: translateX(-50%);
+                            transition-property: opacity, visibility;
+                            transition-duration: 0.2s;
+                            transition-timing-function: ease-in-out;
+                        }
+
                         &:hover {
                             svg {
                                 #icon-gradient {
                                     opacity: 1;
                                 }
+                            }
+
+                            span {
+                                opacity: 1;
+                                visibility: visible;
                             }
                         }
                     }
@@ -240,6 +267,12 @@
                             svg {
                                 width: 7rem;
                                 height: 7rem;
+                            }
+
+                            span {
+                                bottom: -5rem;
+                                font-size: 3rem;
+                                line-height: 4.4rem;
                             }
                         }
                     }

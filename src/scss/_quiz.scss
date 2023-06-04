@@ -224,7 +224,8 @@
     &__bottom {
         padding-top: 3.7rem;
         padding-bottom: 5.2rem;
-        position: absolute;
+        position: fixed;
+        z-index: 2;
         bottom: 0;
         left: 0;
         width: 100%;
