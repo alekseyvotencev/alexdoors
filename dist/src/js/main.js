@@ -159,11 +159,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // кнопка в секции Точь в точь на мобилке
 
-    if (document.querySelector('.selection') && window.innerWidth <= 768) {
-        let selectionBtns = document.querySelectorAll('.selection__swiper-slide__btn.btn2');
-        selectionBtns.forEach(btn => {
+    if (document.querySelector('.selection')) {
+
+        let selectionBtns2 = document.querySelectorAll('.selection__swiper-slide__btn.btn2');
+        let selectionCards = document.querySelectorAll('.selection__swiper-slide__card');
+        selectionBtns2.forEach(btn => {
             btn.addEventListener('click', function () {
-                let cardPopup = btn.parentElement.querySelector('.selection__swiper-slide__card');
+                selectionCards.forEach(card => card.classList.remove('active'))
+                let cardPopup = btn.parentElement.querySelector('.selection__swiper-slide__card.card2');
+                btn.parentElement.classList.add('dark');
+                cardPopup.classList.add('active');
+                let cardPopupClose = cardPopup.querySelector('.selection__swiper-slide__card-close');
+                cardPopupClose.addEventListener('click', function () {
+                    cardPopup.classList.remove('active');
+                    btn.parentElement.classList.remove('dark');
+                })
+            })
+        })
+
+        let selectionBtns1 = document.querySelectorAll('.selection__swiper-slide__btn.btn1');
+        selectionBtns1.forEach(btn => {
+            btn.addEventListener('click', function () {
+                selectionCards.forEach(card => card.classList.remove('active'))
+                let cardPopup = btn.parentElement.querySelector('.selection__swiper-slide__card.card1');
                 btn.parentElement.classList.add('dark');
                 cardPopup.classList.add('active');
                 let cardPopupClose = cardPopup.querySelector('.selection__swiper-slide__card-close');
@@ -239,12 +257,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    // карта на странице Где купить
+    // карта на странице Где купить + табы с городами
     if (document.querySelector('#offices')) {
-
+        let myMap;
         if (window.innerWidth > 768) {
             ymaps.ready(function () {
-                var myMap = new ymaps.Map('offices', {
+                myMap = new ymaps.Map('offices', {
                     center: [55.430758, 37.546489],
                     zoom: 4,
                     behaviors: ['default', 'scrollZoom']
@@ -296,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         } else {
             ymaps.ready(function () {
-                var myMap = new ymaps.Map('offices', {
+                myMap = new ymaps.Map('offices', {
                     center: [55.430758, 37.546489],
                     zoom: 3,
                     behaviors: ['default', 'scrollZoom']
@@ -348,7 +366,37 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
+        if (document.querySelector('.offices')) {
+            let officesBtns = document.querySelectorAll('.offices__content-left__list-item-btn');
+            officesBtns.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    officesBtns.forEach(el => {
+                        el.classList.remove('active');
+                    })
+                    e.currentTarget.classList.add('active');
+                    const path = e.currentTarget.dataset.path;
+                    document.querySelectorAll(`[data-target]`).forEach(el => el.classList.remove('active'));
+                    document.querySelector(`[data-target=${path}]`).classList.add('active');
+                    myMap.setZoom(15);
+                    myMap.panTo(points[0], {
+                        flying: 1
+                    });
+                })
+            })
 
+            let officesBlocks = document.querySelectorAll('.offices__info');
+            officesBlocks.forEach(block => {
+                let officeBlockClose = block.querySelector('.offices__info-close');
+                officeBlockClose.addEventListener('click', function () {
+                    block.classList.remove('active');
+                    officesBtns.forEach(btn => btn.classList.remove('active'));
+                    myMap.setZoom(4);
+                    myMap.panTo([55.430758, 37.546489], {
+                        flying: 1
+                    });
+                })
+            })
+        }
     }
 
     // чекбоксы + радио в фильтрах, чтобы сменился фон, при радио кнопке чтобы текст подставлялся 
@@ -651,7 +699,6 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         });
     }
-
 
     // МОДАЛКИ
 

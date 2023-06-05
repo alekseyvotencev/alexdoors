@@ -190,6 +190,16 @@
                 justify-content: center;
                 background-color: $primaryColor;
                 z-index: 2;
+                transition-property: opacity, visibility;
+                transition-duration: 0.2s;
+                transition-timing-function: ease-in-out;
+                opacity: 0;
+                visibility: hidden;
+
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                }
 
                 &-img {
                     width: 13rem;
@@ -232,12 +242,6 @@
                         letter-spacing: 0.05em;
                         text-transform: uppercase;
                         color: $white;
-                    }
-
-                    .card-link {
-                        &::before {
-                            opacity: 1;
-                        }
                     }
                 }
             }
