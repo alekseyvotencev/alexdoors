@@ -1,0 +1,66 @@
+.pdf {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+
+    &__container {
+        margin: 0 auto;
+        width: 122rem;
+    }
+
+    &__top {
+        margin-bottom: 29rem;
+        display: flex;
+        justify-content: space-between;
+
+        &-left {
+            font-weight: 600;
+            font-size: 2.2rem;
+
+            p {
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        &-right {
+            img {
+                width: 53.7rem;
+                height: 13rem;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__content {
+    }
+
+    &__heading {
+        margin-bottom: 10rem;
+        font-weight: 400;
+        font-size: 6rem;
+        line-height: 1;
+        text-align: center;
+    }
+
+    &__images {
+        margin-bottom: 10rem;
+        display: flex;
+        gap: 4rem;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56.6rem;
+            height: 56.6rem;
+            border: 1px solid $primaryColor;
+
+            img {
+                max-width: 21rem;
+                max-height: 45rem;
+                object-fit: contain;
+            }
+        }
+    }
+}
