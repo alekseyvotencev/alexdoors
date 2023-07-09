@@ -48,6 +48,14 @@
         }
     }
 
+    &__content {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
     &__heading {
         margin-bottom: 3.8rem;
     }
