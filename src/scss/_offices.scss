@@ -167,10 +167,12 @@
 
         &__content {
             flex-direction: column;
+            height: auto;
 
             &-left {
                 padding: 6rem 5rem 0 5rem;
                 width: 100%;
+                height: auto;
 
                 &__heading {
                     margin-bottom: 7.2rem;
@@ -182,6 +184,10 @@
 
                 &__list {
                     max-height: 64.4rem;
+                    width: 67rem;
+                    margin-left: -5rem;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
 
                     &-item {
                         border-width: 0.2rem;
@@ -198,10 +204,47 @@
 
             #offices {
                 width: 100%;
-                height: 62rem;
+                height: auto;
 
                 [class*="cluster-night-content"] {
                     font-size: 2.6rem;
+                }
+
+                .offices__info {
+                    padding: 6rem 5rem;
+                    width: 100%;
+                    height: auto;
+
+                    &-heading {
+                        margin-bottom: 4rem;
+                    }
+
+                    &-hours {
+                        margin-bottom: 4rem;
+                        font-size: 3.6rem;
+                        line-height: 5.4rem;
+
+                        p {
+                            &:not(:last-child) {
+                                margin-bottom: 1rem;
+                            }
+                        }
+                    }
+
+                    &-phone,
+                    &-address {
+                        margin-bottom: 4rem;
+                        font-size: 3.6rem;
+                        line-height: 5.4rem;
+                    }
+
+                    &-address {
+                        margin-bottom: 0;
+                    }
+                }
+
+                & > ymaps {
+                    height: 62rem;
                 }
             }
         }

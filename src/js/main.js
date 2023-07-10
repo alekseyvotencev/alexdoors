@@ -720,7 +720,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let measuringBtn = document.querySelector('.header__btn-measurer');
         measuringBtn.addEventListener('click', function () {
             openPopupElement(popupMeasuring);
-            clickOutsidePopup(popupMeasuring.querySelector('.pop-up__body'), popupMeasuring)
         })
     }
 
