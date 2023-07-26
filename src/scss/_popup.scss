@@ -318,8 +318,16 @@
         &-item {
             width: 33rem;
             height: 33rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
             cursor: pointer;
+
+            img.door {
+                height: 80%;
+                width: auto;
+            }
 
             &:not(:nth-last-child(-n + 2)) {
                 margin-bottom: 3rem;
