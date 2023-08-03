@@ -1322,6 +1322,27 @@
     <div class="popup__body">
         <p class="popup__heading heading1">Выберите стекло</p>
         <button class="popup__btn-clear primary-btn">Сбросить выбор</button>
+        <div class="popup-select filters-select">
+            <p class="filters-select__name">Расположение стёкол</p>
+            <p class="filters-select__title">Центральное </p>
+            <div class="filters__item">
+                <label class="filters__item-label">
+                    <input type="radio" class="filters__item-label__input" name="glass-arrangement" value="Вариант 1">
+                    <span class="filters__item-label__radio"></span>
+                    <span class="filters__item-label__span">Вариант 1</span>
+                </label>
+                <label class="filters__item-label">
+                    <input type="radio" class="filters__item-label__input" name="glass-arrangement" value="Вариант 2">
+                    <span class="filters__item-label__radio"></span>
+                    <span class="filters__item-label__span">Вариант 2</span>
+                </label>
+                <label class="filters__item-label">
+                    <input type="radio" class="filters__item-label__input" name="glass-arrangement" value="Вариант 3">
+                    <span class="filters__item-label__radio"></span>
+                    <span class="filters__item-label__span">Вариант 3</span>
+                </label>
+            </div>
+        </div>
         <div class="glass-popup__list">
             <div class="glass-popup__list-item">
                 <img src="./src/images/glass-img1.png" alt="" class="glass-popup__list-item__type">
@@ -1351,63 +1372,19 @@
                 </div>
             </div>
 
-            <div class="glass-popup__list-item">
-                <img src="./src/images/glass-img3.png" alt="" class="glass-popup__list-item__type">
-                <div class="glass-popup__list-item__name">
-                    <p class="heading2">Кризет</p>
-                </div>
-                <div class="card-btn">
-                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
-                            fill="#A0A1A5" />
-                    </svg>
-                </div>
-            </div>
 
-            <div class="glass-popup__list-item">
-                <img src="./src/images/glass-img4.png" alt="" class="glass-popup__list-item__type">
-                <div class="glass-popup__list-item__name">
-                    <p class="heading2">Триплекс</p>
-                </div>
-                <div class="card-btn">
-                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
-                            fill="#A0A1A5" />
-                    </svg>
-                </div>
-            </div>
-
-            <div class="glass-popup__list-item active">
-                <img src="./src/images/glass-img1.png" alt="" class="glass-popup__list-item__type">
-                <div class="glass-popup__list-item__name">
-                    <p class="heading2">Лакобель</p>
-                </div>
-                <div class="card-btn">
-                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
-                            fill="#A0A1A5" />
-                    </svg>
-                </div>
-            </div>
-
-            <div class="glass-popup__list-item">
-                <img src="./src/images/glass-img2.png" alt="" class="glass-popup__list-item__type">
-                <div class="glass-popup__list-item__name">
-                    <p class="heading2">Закаленное</p>
-                </div>
-                <div class="card-btn">
-                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M21.7688 3.23438H19.9745C19.723 3.23438 19.4842 3.34989 19.3302 3.54754L8.74662 16.9548L3.67173 10.5246C3.59496 10.4271 3.49711 10.3483 3.38552 10.294C3.27393 10.2398 3.1515 10.2115 3.02742 10.2114H1.23312C1.06113 10.2114 0.966152 10.409 1.0714 10.5425L8.10231 19.4499C8.43088 19.8657 9.06236 19.8657 9.3935 19.4499L21.9306 3.56295C22.0358 3.43203 21.9408 3.23438 21.7688 3.23438Z"
-                            fill="#A0A1A5" />
-                    </svg>
-                </div>
-            </div>
         </div>
-
+        <div class="glass-popup__option">
+            <div class="glass-popup__option-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="#6FB444" stroke-width="2" />
+                    <rect x="20.5061" width="5" height="29" transform="rotate(45 20.5061 0)" fill="white" />
+                    <rect x="22.1924" y="0.192383" width="2" height="31.1127" rx="1"
+                        transform="rotate(45 22.1924 0.192383)" fill="#6FB444" />
+                </svg>
+            </div>
+            <p class="glass-popup__option-name">Без стекла</p>
+        </div>
     </div>
 </div>
     <footer class="footer">

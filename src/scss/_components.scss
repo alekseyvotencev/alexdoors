@@ -951,6 +951,15 @@ $btnBoxShadow: 1rem 1.5rem 4rem rgba(126, 199, 86, 0.4);
     }
 }
 
+.card__colors {
+    position: absolute;
+    top: 5.4rem;
+    right: 2rem;
+    color: $darkGray;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+}
+
 .card__color-list__container {
     position: absolute;
     top: 4.4rem;

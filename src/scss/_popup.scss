@@ -408,22 +408,31 @@
 }
 
 .glass-popup {
+    .popup-select {
+        margin-bottom: 5.5rem;
+    }
     &__list {
+        margin-bottom: 6rem;
         display: flex;
         flex-wrap: wrap;
+        gap: 3rem;
         justify-content: space-between;
 
         &-item {
             width: 33rem;
-            height: 33rem;
+            height: 46.6rem;
             position: relative;
             cursor: pointer;
-
-            &:not(:nth-last-child(-n + 2)) {
-                margin-bottom: 3rem;
-            }
+            overflow: hidden;
+            background-color: $white;
 
             &.active {
+                .glass-popup__list-item__name {
+                    p {
+                        font-weight: 700;
+                    }
+                }
+
                 .card-btn {
                     svg {
                         path {
@@ -437,9 +446,11 @@
             }
 
             &__type {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+                width: 50.6rem;
+                height: 50.6rem;
+                object-fit: contain;
+                margin-top: 2rem;
+                margin-left: -8.8rem;
             }
 
             &__name {
@@ -448,6 +459,11 @@
                 top: 2rem;
                 left: 2rem;
                 background-color: #fff;
+
+                p {
+                    font-weight: 400;
+                    transition: font-weight 0.2s ease-in-out;
+                }
             }
 
             .card-btn {
@@ -464,6 +480,35 @@
                     }
                 }
             }
+        }
+    }
+
+    &__option {
+        padding: 2rem;
+        width: 33rem;
+        position: relative;
+        background-color: $white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+
+        &-icon {
+            position: absolute;
+            top: 50%;
+            left: 2.5rem;
+            transform: translateY(-50%);
+
+            svg {
+                width: 2.5rem;
+                height: 2.5rem;
+                object-fit: contain;
+            }
+        }
+
+        &-name {
+            font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 2.3rem;
+            text-align: center;
         }
     }
 
