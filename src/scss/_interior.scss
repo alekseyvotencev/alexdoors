@@ -84,7 +84,6 @@
     &__card {
         margin-bottom: 10rem;
         display: flex;
-        align-items: flex-start;
         justify-content: space-between;
 
         &-left {
@@ -242,7 +241,7 @@
                                 }
 
                                 &:hover {
-                                    transform: translateY(0);
+                                    transform: translateY(.2rem);
                                 }
                             }
 
@@ -465,7 +464,10 @@
         }
 
         &-right {
+            display: flex;
+            flex-direction: column;
             width: 50.7rem;
+            height: auto;
 
             &__table {
                 margin-bottom: 3.8rem;
@@ -572,6 +574,7 @@
             }
 
             &__bottom {
+                margin-top: auto;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;

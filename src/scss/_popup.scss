@@ -411,6 +411,18 @@
     .popup-select {
         margin-bottom: 5.5rem;
     }
+
+    .popup__btn-clear {
+        margin-bottom: 0;
+    }
+
+    &__filters {
+        margin-bottom: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     &__list {
         margin-bottom: 6rem;
         display: flex;
